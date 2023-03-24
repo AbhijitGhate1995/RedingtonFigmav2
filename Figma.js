@@ -13,16 +13,20 @@ export default function RedingtonFigma(){
       },
       legend: {
         top: '5%',
-        left: 'center'
+        left: 'center',
+        show:false
     },
     series: [
         {
           type: 'pie',
-          radius: ['30', '35%'],
+          radius: ['50', '50%'],
           avoidLabelOverlap: false,
           label: {
             show: true,
-            position: 'center'
+            position: 'center',
+            itemStyle:{
+              color:"black"
+            }
         },
           emphasis: {
             label: {
@@ -32,13 +36,11 @@ export default function RedingtonFigma(){
             }
         },
           labelLine: {
-            show: false
+            show: true
         },
           data: [
-            { value: 38},
-            { value: 62,datasets : [{
-                backgroundColor : 'white',
-            }]},
+            { value: 38,name:"38%" , itemStyle : {color : '#E73369'}},
+            { value: 62,itemStyle: {color: '#E4E7EC'},},
      
         ]
         }
@@ -46,25 +48,40 @@ export default function RedingtonFigma(){
 
   };
     const BarLineChart1 = {
+      
         tile :{
             Text  : 'Revenue Trend'
         },
+        legend: {
+          top: '5%',
+          left: 'right',
+          show:true
+      },
         xAxis : {
             type : 'category',
             data:['FY 19-20','FY 20-21', 'FY 21-22', 'FY 22-23']
         },
+       
         yAxis : {
             type : 'value'
         },
+        grid:{
+            left:"50",
+            top:"40",
+            bottom:"8"
+        },
+      
         series: [
+          
             {
+              itemStyle: {normal: {color: '#526652'}},
                 name : 'Revenue',
                 data : [2900,3800,3300,2100],
                 type : 'bar',
-                backgroundColor : ['var(--green-900)']
             
             },
             {
+              itemStyle: {normal: {color: '#FDB022'}},
                 name : 'Trend Line',
                 data : [2200,3100,2600,3200],
                 type : 'line',
@@ -100,10 +117,15 @@ export default function RedingtonFigma(){
                     </div>
                 </div>
                 <div className="grid">
-                        <div className="text-xl ml-2 flex flex-row">Target vs. Actual <span className="text-green-500 text-xs ml-2 mt-1"> ▲ 2%</span></div>                        
-                        <div className="flex flex-row"><ReactECharts className=" " option = {PieChartdemo1}/>
-                          <ReactECharts className=" ml-1" option={BarLineChart1}/>                        
-                        </div>
+                        <div className="text-xl ml-2 flex ">Target vs. Actual <span className="text-green-500 text-xs ml-2 mt-1"> ▲ 2%</span></div>                        
+                        <div className="flex " style={{width:"500px"}}>
+                          
+                        <ReactECharts style={{height:"140px",width:"300px"}} option = {PieChartdemo1}/>
+                        
+                        
+                         <ReactECharts style={{height:"140px",width:"350px"}} option={BarLineChart1}/> 
+                          
+                         </div> 
                         </div>
                 </div>
             <div className="flex flex-col w-6/12 h-72 m-4 border-2 rounded-md border-gray-400 bg-slate-100">
@@ -126,14 +148,16 @@ export default function RedingtonFigma(){
                     <div className="w-4/12 border-slate-900 border-2 rounded-md">
                         <div className=" ml-2 text-sm"> GM % </div>
                         <div className="text-xl ml-2 flex flex-row"> 4 % 
-                         <span className="text-green-500 text-xs ml-2 content-end mt-1"> ▲ 4%</span>
+                         <span className=" text-green-500 text-xs ml-2 content-end mt-1"> ▲ 4%</span>
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-row">
-                        <div className="text-xl ml-2 flex flex-row">Target vs. Actual <span className="text-green-500 text-xs ml-2 mt-1"> ▲ 2%</span> </div>
-                         <ReactECharts option = {PieChartdemo1}/>
-                         <ReactECharts option={BarLineChart1}/>                   
+                <div className="grid">
+                        <div className="text-xl ml-2 flex ">Target vs. Actual <span className="text-green-500 text-xs ml-2 mt-1"> ▲ 2%</span></div>                        
+                        <div className="flex " style={{width:"500px"}}>                          
+                        <ReactECharts style={{height:"140px",width:"300px"}} option = {PieChartdemo1}/>
+                        <ReactECharts style={{height:"140px",width:"350px"}} option={BarLineChart1}/>                           
+                         </div>                         
                 </div>
             </div>            
         </div>
