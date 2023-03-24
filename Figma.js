@@ -48,7 +48,6 @@ export default function RedingtonFigma(){
       ]
       }
   ]
-
   };
     const BarLineChart1 = {
       
@@ -223,7 +222,7 @@ export default function RedingtonFigma(){
   const BarLineChart3 = {
     
     tile :{
-        Text  : 'Margin Trend'
+        Text  : 'Expense Trend'
     },
     legend: {
       top: '5%',
@@ -308,7 +307,7 @@ const PieChartdemo4 = {
 const BarLineChart4 = {
   
   tile :{
-      Text  : 'Margin Trend'
+      Text  : 'Income Trend'
   },
   legend: {
     top: '5%',
@@ -347,6 +346,93 @@ const BarLineChart4 = {
   ] 
 
 };
+
+// Pie chart & Bar Line Chart number 5
+
+
+const PieChartdemo5 = {
+  tooltip: {
+      trigger: 'item'
+    },
+    legend: {
+      top: '5%',
+      left: 'center',
+      show:false
+  },
+  series: [
+      {
+        type: 'pie',
+        radius: ['50', '50%'],
+        avoidLabelOverlap: false,
+        label: {
+          show: true,
+          position: 'center',
+          itemStyle:{
+            color:"black"
+          }
+      },
+        emphasis: {
+          label: {
+            show: true,
+            fontSize: 40,
+            fontWeight: 'bold'
+          }
+      },
+        labelLine: {
+          show: true
+      },
+        data: [
+          { value: 70, name:"70%" , itemStyle : {color : '#029046'}},
+          { value: 30,itemStyle: {color: '#E4E7EC'},},
+   
+      ]
+      }
+  ]
+
+};
+const BarLineChart5 = {
+      
+  tile :{
+      Text  : 'Profitability Trend'
+  },
+  legend: {
+    top: '5%',
+    left: 'right',
+    show:true
+},
+  xAxis : {
+      type : 'category',
+      data:['FY 19-20','FY 20-21', 'FY 21-22', 'FY 22-23']
+  },
+ 
+  yAxis : {
+      type : 'value'
+  },
+  grid:{
+      left:"50",
+      top:"40",
+      bottom:"8"
+  },
+
+  series: [
+    
+      {
+        itemStyle: {normal: {color: '#526652'}},
+          name : 'Revenue',
+          data : [350,550,400,700],
+          type : 'bar',
+      
+      },
+      {
+        itemStyle: {normal: {color: '#FDB022'}},
+          name : 'Trend Line',
+          data : [770,540,740,510],
+          type : 'line',
+      }
+  ] 
+
+};
+// Horizontal bar & Bar Line Chart number 5
 
     return(
         <div className=" sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-2 mt-4">
@@ -507,7 +593,90 @@ const BarLineChart4 = {
 
           </div>
 
-            {/* 5rd card of Cost / Expense */}
+            {/* 5rd & 6th card  */}
+            <div className="flex justify-evenly">
+          <div className="flex flex-col h-72 w-1/2 border-2 rounded-md border-gray-400 m-4">
+                <div className=" flex flex-row justify-between">
+                  <div className="h-1/6  font-bold ml-2"> Profitability </div>
+                  <div className="font-bold mr-2">:</div>
+                </div>
+                <div className=" flex flex-row h-3/12 gap-2 m-4 sm:grid-cols-1 md:grid-cols-2" >
+                    <div className="w-4/12 border-slate-900 border-2 rounded-md ">
+                        <div className=" text-sm ml-2"> PBT </div>
+                        <div className="text-xl ml-2 flex flex-row"> ₹ 32.6 Cr 
+                        <span className="text-red-500 text-xs ml-2 mt-1"> ▲ 4%</span></div>
+                    </div>
+                    <div className="w-4/12 border-slate-900 border-2 rounded-md">
+                        <div className="ml-2 text-sm"> PAT </div>
+                        <div className="text-xl ml-2 flex flex-row"> ₹ 23.8 Cr 
+                          <span className="text-green-500 text-xs ml-2 mt-1"> ▲ 4%</span>
+                        </div>
+                    </div>
+                    <div className="w-4/12 border-slate-900 border-2 rounded-md">
+                        <div className=" ml-2 text-sm"> PAT % </div>
+                        <div className="text-xl ml-2 flex flex-row"> 3.00% 
+                         <span className="text-green-500 text-xs ml-2 content-end mt-1"> ▲ 4%</span>
+                        </div>
+                    </div>
+                </div>
+                <div className="grid ">
+                        <div className="text-xl ml-2 flex ">Target vs. Actual <span className="text-green-500 text-xs ml-2 mt-1"> ▲ 2%</span></div>                        
+                        <div className="flex " style={{width:"500px"}}>
+                          <ReactECharts style={{height:"140px",width:"300px"}} option = {PieChartdemo5}/>                        
+                          <ReactECharts style={{height:"140px",width:"350px"}} option={BarLineChart5}/> 
+                          
+                        </div> 
+                        </div>
+                </div>
+
+            {/* 6th card of Margin */}
+
+            <div className="flex flex-col h-72 m-4 border-2 rounded-md border-gray-400 w-1/2">
+               <div className=" flex flex-row justify-between">
+                  <div className="h-1/6  font-bold ml-2"> Income </div>
+                  <div className="font-bold mr-2">:</div>
+                </div>
+                <div className=" flex justify-evenly h-3/12 gap-2 m-4 md:grid-cols-2" >
+                    <div className="w-2.4/12 border-slate-900 border-2 rounded-md ">
+                        <div className=" text-sm ml-2"> EBIT </div>
+                        <div className="text-xl ml-2 flex flex-row"> ₹ 32.6 Cr 
+                        <span className="text-green-500 text-xs ml-2 mt-1">  ▲ 4%</span></div>
+                    </div>
+                    <div className="w-2.4/12 border-slate-900 border-2 rounded-md">
+                        <div className="ml-2 text-sm"> EBIT % </div>
+                        <div className="text-xl ml-2 flex flex-row"> 4.1%
+                          <span className="text-green-500 text-xs ml-2 mt-1"> ▲ 4%</span>
+                        </div>
+                    </div>
+                    <div className="w-2.4/12 border-slate-900 border-2 rounded-md">
+                        <div className=" ml-2 text-sm"> EBITDA </div>
+                        <div className="text-xl ml-2 flex flex-row">₹ 30 Cr
+                         <span className=" text-green-500 text-xs ml-2 content-end mt-1"> ▲ 4%</span>
+                        </div>
+                    </div>
+                    <div className="w-2.4/12 border-slate-900 border-2 rounded-md">
+                        <div className="ml-2 text-sm"> EBITDA/ Unit </div>
+                        <div className="text-xl ml-2 flex flex-row"> 2.23
+                          <span className="text-green-500 text-xs ml-2 mt-1"> ▲ 4%</span>
+                        </div>
+                    </div>
+                    <div className="w-2.4/12 border-slate-900 border-2 rounded-md">
+                        <div className="ml-2 text-sm"> EBITDA % </div>
+                        <div className="text-xl ml-2 flex flex-row"> 2%
+                          <span className="text-green-500 text-xs ml-2 mt-1"> ▲ 1%</span>
+                        </div>
+                    </div>
+                </div>
+                <div className="grid">
+                        <div className="text-xl ml-2 flex ">Target vs. Actual <span className="text-green-500 text-xs ml-2 mt-1"> ▲ 2%</span></div>                        
+                        <div className="flex " style={{width:"500px"}}>                          
+                        <ReactECharts style={{height:"140px",width:"300px"}} option={PieChartdemo4}/>
+                        <ReactECharts style={{height:"140px",width:"350px"}} option={BarLineChart4}/>                           
+                         </div>                         
+                </div>
+            </div>  
+
+          </div>  
 
 
         </div>
