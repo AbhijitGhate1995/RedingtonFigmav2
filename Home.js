@@ -2,85 +2,336 @@ import React from 'react'
 import ReactECharts from 'echarts-for-react';
 import * as echarts from 'echarts/dist/echarts.js';
 export default function Home() {
-    const PieChartdemo1 = {
-      
-          tooltip: {
-              trigger: 'item'
-            },
-            legend: {
-              top: '5%',
-              left: 'center'
-          },
-          series: [
-              {
+    const Circle = {
+        tooltip: {
+            trigger: 'item'
+        },
+        legend: {
+            top: '5%',
+            left: 'center',
+            show: false
+        },
+        series: [
+            {
                 type: 'pie',
-                radius: ['30', '35%'],
+                radius: ['50', '50%'],
                 avoidLabelOverlap: false,
                 label: {
-                  show: true,
-                  position: 'center'
-              },
-                emphasis: {
-                  label: {
                     show: true,
-                    fontSize: 40,
-                    fontWeight: 'bold'
-                  }
-              },
+                    position: 'center',
+                    itemStyle: {
+                        color: "black"
+                    }
+                },
+                emphasis: {
+                    label: {
+                        show: true,
+                        fontSize: 40,
+                        fontWeight: 'bold'
+                    }
+                },
                 labelLine: {
-                  show: false
-              },
+                    show: true
+                },
                 data: [
-                  { value: 38},
-                  { value: 62,datasets : [{
-                      backgroundColor : 'white',
-                  }]},
-           
-              ]
-              }
-          ]
-      
-        }
-        };
-          const BarLineChart1 = {
-              tile :{
-                  Text  : 'Revenue Trend'
-              },
-              xAxis : {
-                  type : 'category',
-                  data:['FY 19-20','FY 20-21', 'FY 21-22', 'FY 22-23']
-              },
-              yAxis : {
-                  type : 'value'
-              },
-              series: [
-                  {
-                      name : 'Revenue',
-                      data : [2900,3800,3300,2100],
-                      type : 'bar',
-                      backgroundColor : ['var(--green-900)']
-                  
-                  },
-                  {
-                      name : 'Trend Line',
-                      data : [2200,3100,2600,3200],
-                      type : 'line',
-                  }
-              ] 
-      
-          }
-      
-    
+                    { value: 40, name: "38%", itemStyle: { color: '#E73369' } },
+                    { value: 60, itemStyle: { color: '#E4E7EC' }, },
+
+                ]
+            }
+        ]
+    };
+    const Bar = {
+
+        tile: {
+            Text: 'Revenue Trend'
+        },
+        legend: {
+            top: '1%',
+            left: 'right',
+            show: true
+        },
+        xAxis: {
+            type: 'category',
+            data: ['FY 19-20', 'FY 20-21', 'FY 21-22', 'FY 22-23']
+        },
+
+        yAxis: {
+            type: 'value'
+        },
+        grid: {
+            left: "50",
+            top: "40",
+            bottom: "8"
+        },
+
+        series: [
+
+            {
+                itemStyle: { normal: { color: '#526652' } },
+                name: 'Revenue',
+                data: [2900, 4000, 3300, 3000],
+                type: 'bar',
+
+            },
+            {
+                itemStyle: { normal: { color: '#FDB022' } },
+                name: 'Trend Line',
+                data: [2200, 3100, 2600, 3200],
+                type: 'line',
+            }
+        ]
+
+    };
+    const Circle2 = {
+        tooltip: {
+            trigger: 'item'
+        },
+        legend: {
+            top: '5%',
+            left: 'center',
+            show: false
+        },
+        series: [
+            {
+                type: 'pie',
+                radius: ['50', '50%'],
+                avoidLabelOverlap: false,
+                label: {
+                    show: true,
+                    position: 'center',
+                    itemStyle: {
+                        color: "black"
+                    }
+                },
+                emphasis: {
+                    label: {
+                        show: true,
+                        fontSize: 40,
+                        fontWeight: 'bold'
+                    }
+                },
+                labelLine: {
+                    show: true
+                },
+                data: [
+                    { value: 52, name: "52%", itemStyle: { color: '#B9B062' } },
+                    { value: 48, itemStyle: { color: '#E4E7EC' }, },
+
+                ]
+            }
+        ]
+
+    };
+    const Bar2 = {
+
+        tile: {
+            Text: 'Margin Trend'
+        },
+        legend: {
+            top: '1%',
+            left: 'right',
+            fontSize: '1px',
+            show: true
+        },
+        xAxis: {
+            type: 'category',
+            data: ['FY 19-20', 'FY 20-21', 'FY 21-22', 'FY 22-23']
+        },
+
+        yAxis: {
+            type: 'value'
+        },
+        grid: {
+            left: "50",
+            top: "20",
+            bottom: "8"
+        },
+
+        series: [
+
+            {
+                itemStyle: { normal: { color: '#526652' } },
+                name: 'Margin',
+                data: [40, 55, 70, 75],
+                type: 'bar',
+
+            },
+            {
+                itemStyle: { normal: { color: '#FDB022' } },
+                name: 'Trend Line',
+                data: [45, 70, 50, 75],
+                type: 'line',
+            }
+        ]
+
+    };
+    const circle3 = {
+        tooltip: {
+            trigger: 'item'
+        },
+        legend: {
+            top: '5%',
+            left: 'center',
+            show: false
+        },
+        series: [
+            {
+                type: 'pie',
+                radius: ['50', '50%'],
+                avoidLabelOverlap: false,
+                label: {
+                    show: true,
+                    position: 'center',
+                    itemStyle: {
+                        color: "black"
+                    }
+                },
+                emphasis: {
+                    label: {
+                        show: true,
+                        fontSize: 40,
+                        fontWeight: 'bold'
+                    }
+                },
+                labelLine: {
+                    show: true
+                },
+                data: [
+                    { value: 70, name: "70%", itemStyle: { color: '#029046' } },
+                    { value: 30, itemStyle: { color: '#E4E7EC' }, },
+
+                ]
+            }
+        ]
+
+    };
+    const Bar3 = {
+
+        tile: {
+            Text: 'Profitability Trend'
+        },
+        legend: {
+            top: '5%',
+            left: 'right',
+            show: true
+        },
+        xAxis: {
+            type: 'category',
+            data: ['FY 19-20', 'FY 20-21', 'FY 21-22', 'FY 22-23']
+        },
+
+        yAxis: {
+            type: 'value'
+        },
+        grid: {
+            left: "50",
+            top: "40",
+            bottom: "8"
+        },
+
+        series: [
+
+            {
+                itemStyle: { normal: { color: '#526652' } },
+                name: 'Revenue',
+                data: [350, 550, 400, 700],
+                type: 'bar',
+
+            },
+            {
+                itemStyle: { normal: { color: '#FDB022' } },
+                name: 'Trend Line',
+                data: [770, 540, 740, 510],
+                type: 'line',
+            }
+        ]
+
+    };
+    const horizontal4 = {
+
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'shadow'
+            }
+        },
+        legend: {
+            top: { fontSize: '100px' },
+        },
+        grid: {
+            left: '6%',
+            right: '1%',
+            bottom: '2%',
+
+        },
+        xAxis: {
+            type: 'value',
+
+        },
+        yAxis: {
+            type: 'category',
+            data: ['Opening', 'Average', 'Closing']
+        },
+        series: [
+
+            {
+                itemStyle: { normal: { color: '#526652' } },
+                type: 'bar',
+                data: [2500, 4300, 3500]
+            },
+            {
+                name: 'Revenue',
+                data: [2900, 3800, 3300, 2100],
+                type: 'bar',
+                backgroundColor: ['var(--green-900)']
+
+            },
+            {
+                name: 'Trend Line',
+                data: [2200, 3100, 2600, 3200],
+                type: 'line'
+            }
+        ]
+
+
+    };
+    const triplebar4 = {
+        title: {
+
+        },
+        grid: {
+            left: "60",
+            top: "70",
+            bottom: "20",
+            right: "9"
+        },
+        legend: {},
+        tooltip: {},
+        dataset: {
+            source: [
+                ['product', 'Opening', 'Closing', 'Average', 'Trend Line'],
+                ['FY 19-20', 400, 1000, 800, 900],
+                ['FY 20-21', 900, 1300, 1200, 1000],
+                ['FY 21-22', 900, 1300, 1200, 1000],
+                ['Fy 22-23', 900, 1300, 1200, 1000]
+            ]
+        },
+        xAxis: { type: 'category' },
+        yAxis: {},
+        series: [{ type: 'bar', itemStyle: { normal: { color: '#029046' } } }, { type: 'bar', itemStyle: { normal: { color: '#E73369' } } }, { type: 'bar', itemStyle: { normal: { color: '#526652' } } }, { type: 'line', itemStyle: { normal: { color: '#FDB022' } } }]
+    };
+
     return (
 
-        < div className='bg-slate-100 mt-5'>
+        < div className='bg-slate-100 mt-2'>
 
             <div className="grid flex-row gap-3 2xl:grid-cols-4 xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-1 overallstatus">
-                <div >
+                <div className='hover:drop-shadow-lg'>
                     <div className='shadow border rounded-md ' >
-                        <div className='hover:bg-slate-200 flex items-center pl-7 space-x-4 bg-slate-100'>
+                        <div className='hover:bg-slate-200 flex items-center pl-7 h-12 p-9 space-x-4 bg-[#EDF2F0]'>
                             <img src='Group.png' className='w-11 pt-7 pb-7' />
-                            <div ><h2 className='pb-1'>Compensation</h2>
+                            <div><h2 className='pb-1'>Compensation</h2>
                                 <h1 className='text-xl font-medium '><b> &#8377; 58.53 Cr.</b></h1>
                             </div>
                         </div>
@@ -100,76 +351,80 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                <div className='shadow border rounded-md ' >
-                    <div className='hover:bg-slate-200 flex items-center pl-7  space-x-4 bg-slate-100'>
-                        <img src='Rs.png' className='w-11 pt-8 pb-7 ' /> <div><h2 className='pb-1 light-300'>Other Cost</h2>
-                            <h1 className='text-xl font-medium'><b> &#8377;61.18 Cr.</b></h1>
+                <div className='hover:drop-shadow-lg'>
+                    <div className='shadow border rounded-md ' >
+                        <div className='hover:bg-slate-200 flex items-center pl-7 h-12 p-9  space-x-4 bg-[#EDF2F0]'>
+                            <img src='Rs.png' className='w-11 pt-8 pb-7 ' /> <div><h2 className='pb-1 light-300'>Other Cost</h2>
+                                <h1 className='text-xl font-medium'><b> &#8377;61.18 Cr.</b></h1>
+                            </div>
                         </div>
-                    </div>
-                    <div className='bg-white rounded-md flex  flex-row place-content-center space-x-4 pb-2 pt-1'>
-                        <div className='ml-2'><h2 className="text-[12px] font-normal text-[#344054] text-center">LY Value</h2>
-                            <h1 className="text- font-[500] text-[#262D29]" >&#8377;54.40 Cr</h1>
+                        <div className='bg-white rounded-md flex  flex-row place-content-center space-x-4 pb-2 pt-1'>
+                            <div className='ml-2'><h2 className="text-[12px] font-normal text-[#344054] text-center">LY Value</h2>
+                                <h1 className="text- font-[500] text-[#262D29]" >&#8377;54.40 Cr</h1>
 
-                        </div><img src='Rect.png' className='pt-3 h-8' />
-                        <div className='ml-2'><h2 className="text-[12px] font-normal text-[#344054] text-center">LY Var% </h2>
-                            <h1 className="text- font-[500] text-[#262D29]">11%</h1>
+                            </div><img src='Rect.png' className='pt-3 h-8' />
+                            <div className='ml-2'><h2 className="text-[12px] font-normal text-[#344054] text-center">LY Var% </h2>
+                                <h1 className="text- font-[500] text-[#262D29]">11%</h1>
 
-                        </div><img src='Rect.png' className='pt-3 h-8' />
-                        <div className='ml-2'><h2 className="text-[12px] font-normal text-[#334056] text-center">3 Yr CAGR</h2>
-                            <h1 className="text- font-[500] text-[#262D29]">12% </h1>
-                        </div>
-                    </div>
-                </div>
-                <div className='shadow border rounded-md' >
-                    <div className='hover:bg-slate-200 flex items-center pl-7  space-x-4 bg-slate-100 '>
-                        <img src='pep.png' className='w-11 pt-8 pb-7' />
-                        <div>
-                            <h2 className='pb-1'>Opex</h2>
-                            <h1 className='text-xl font-medium'><b> &#8377;120.71 Cr</b></h1>
-                        </div>
-                    </div>
-                    <div className='bg-white rounded-md flex  flex-row place-content-center space-x-4 pb-2 pt-1'>
-                        <div className='ml-2'><h2 className="text-[12px] font-normal text-[#344054] text-center">LY Value</h2>
-                            <h1 className="text- font-[500] text-[#262D29]">&#8377;100.76 Cr</h1>
-
-                        </div><img src='Rect.png' className='pt-3 h-8' />
-                        <div className='ml-2'><h2 className="text-[12px] font-normal text-[#344054] text-center">LY Var% </h2>
-                            <h1 className="text- font-[500] text-[#262D29]">20%</h1>
-
-                        </div><img src='Rect.png' className='pt-3 h-8' />
-                        <div className='ml-2'><h2 className="text-[12px] font-normal text-[#344054] text-center">3 Yr CAGR</h2>
-                            <h1 className="text- font-[500] text-[#262D29]">20% </h1>
+                            </div><img src='Rect.png' className='pt-3 h-8' />
+                            <div className='ml-2'><h2 className="text-[12px] font-normal text-[#334056] text-center">3 Yr CAGR</h2>
+                                <h1 className="text- font-[500] text-[#262D29]">12% </h1>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div className='shadow border rounded-md' >
-                    <div className='hover:bg-slate-200 flex items-center pl-7  space-x-4 bg-slate-100 '>
-                        <img src='Rs.png' className='w-11 pt-8 pb-7 ' /> <div><h2 className='pb-1'>WC Intrest</h2>
+                <div className='hover:drop-shadow-lg'>
+                    <div className='shadow border rounded-md' >
+                        <div className='hover:bg-slate-200 flex items-center pl-7 h-12 p-9  space-x-4 bg-[#EDF2F0]'>
+                            <img src='pep.png' className='w-11 pt-8 pb-7' />
+                            <div>
+                                <h2 className='pb-1'>Opex</h2>
+                                <h1 className='text-xl font-medium'><b> &#8377;120.71 Cr</b></h1>
+                            </div>
+                        </div>
+                        <div className='bg-white rounded-md flex  flex-row place-content-center space-x-4 pb-2 pt-1'>
+                            <div className='ml-2'><h2 className="text-[12px] font-normal text-[#344054] text-center">LY Value</h2>
+                                <h1 className="text- font-[500] text-[#262D29]">&#8377;10.76 Cr</h1>
 
-                            <h1 className='text-xl font-medium' ><b> &#8377;-1.81 Cr</b></h1></div>
+                            </div><img src='Rect.png' className='pt-3 h-8' />
+                            <div className='ml-2'><h2 className="text-[12px] font-normal text-[#344054] text-center">LY Var% </h2>
+                                <h1 className="text- font-[500] text-[#262D29]">20%</h1>
+
+                            </div><img src='Rect.png' className='pt-3 h-8' />
+                            <div className='ml-2'><h2 className="text-[12px] font-normal text-[#344054] text-center">3 Yr CAGR</h2>
+                                <h1 className="text- font-[500] text-[#262D29]">20% </h1>
+                            </div>
+                        </div>
                     </div>
-                    <div className='bg-white rounded-md flex  flex-row place-content-center space-x-4 pb-2 pt-1'>
-                        <div className='ml-2'><h2 className="text-[12px] font-normal text-[#344054] text-center">LY Value</h2>
-                            <h1 className="text- font-[500] text-[#262D29]">&#8377;19.63 Cr</h1>
+                </div>
+                <div className='hover:drop-shadow-lg'>
+                    <div className='shadow border rounded-md' >
+                        <div className='hover:bg-slate-200 flex items-center pl-7 h-12 p-9 space-x-4 bg-[#EDF2F0]'>
+                            <img src='Rs.png' className='w-11 pt-8 pb-7 ' /> <div><h2 className='pb-1'>WC Intrest</h2>
 
-                        </div><img src='Rect.png' className='pt-3 h-8' />
-                        <div className='ml-2'><h2 className="text-[12px] font-normal text-[#344054] text-center">LY Var% </h2>
-                            <h1 className="text- font-[500] text-[#ff3e3e]">-109%</h1>
+                                <h1 className='text-xl font-medium' ><b> &#8377;-1.81 Cr</b></h1></div>
+                        </div>
+                        <div className='bg-white rounded-md flex  flex-row place-content-center space-x-4 pb-2 pt-1'>
+                            <div className='ml-2'><h2 className="text-[12px] font-normal text-[#344054] text-center">LY Value</h2>
+                                <h1 className="text- font-[500] text-[#262D29]">&#8377;19.63 Cr</h1>
 
-                        </div><img src='Rect.png' className='pt-3 h-8' />
-                        <div className='ml-2'><h2 className="text-[12px] font-normal text-[#344054] text-center">3 Yr CAGR</h2>
-                            <h1 className="text- font-[500] text-[#ff3e3e]">-131% </h1>
+                            </div><img src='Rect.png' className='pt-3 h-8' />
+                            <div className='ml-2'><h2 className="text-[12px] font-normal text-[#344054] text-center">LY Var% </h2>
+                                <h1 className="text- font-[500] text-[#ff3e3e]">-109%</h1>
+
+                            </div><img src='Rect.png' className='pt-3 h-8' />
+                            <div className='ml-2'><h2 className="text-[12px] font-normal text-[#344054] text-center">3 Yr CAGR</h2>
+                                <h1 className="text- font-[500] text-[#ff3e3e]">-131% </h1>
+
+                            </div>
 
                         </div>
-
                     </div>
                 </div>
-                <div >
 
-                </div>
             </div>
 
-            <div className="grid flex-row gap-3 2xl:grid-cols-2 xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1">
+            <div className=" mt-3 grid flex-row gap-3 2xl:grid-cols-2 xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1">
                 <div className="bg-white py-3 rounded-xl border  border-[#E1E6E3] px-4">
                     <div className="flex justify-between mb-4">
                         <span className="font-semibold">Revenue</span>
@@ -203,17 +458,17 @@ export default function Home() {
                             <div className="bg-[#F9FAFB] rounded-md h-36 w-42 p-2">
                                 <p className="text-[16px] font-semibold text-[#344054] text-center">Target vs. Actual</p>
 
-                                <div className="">
-                                <ReactECharts style={{height:"116px",width:"120px"}} option={Circle}></ReactECharts>
+                                <div>
+                                    <ReactECharts style={{ height: "100px", width: "140px" }} option={Circle}></ReactECharts>
                                 </div>
                             </div>
                         </div>
                         <div className="col-span-3">
                             <div className="bg-[#F9FAFB] rounded-md p-2 h-36 w-72">
-                                <p className="text-[16px] font-semibold text-[#344054] text-center">Revenue Trend</p>
 
-                                <div>
-                                    <ReactECharts style={{height:"146px",width:"511px"}} option={option}></ReactECharts>
+                                <p className="text-[13px] font-semibold text-[#344054]">Revenue Trend</p>
+                                <div >
+                                    <ReactECharts style={{ height: "111px", width: "270px" }} option={Bar}></ReactECharts>
                                 </div>
                             </div>
                         </div>
@@ -253,17 +508,18 @@ export default function Home() {
                             <div className="bg-[#F9FAFB] rounded-md h-36 w-42 p-2">
                                 <p className="text-[16px] font-semibold text-[#344054] text-center">Target vs. Actual</p>
 
-                                <div className="mt-3 min-h-[80px] mx-auto h-36 w-32 p-2">
-
+                                <div>
+                                    <ReactECharts style={{ height: "100px", width: "140px" }} option={Circle2}></ReactECharts>
                                 </div>
                             </div>
                         </div>
                         <div className="col-span-3">
                             <div className="bg-[#F9FAFB] rounded-md p-2 h-36 w-72">
-                                <p className="text-[16px] font-semibold text-[#344054] text-center">Margin Trend</p>
+                                <p className="text-[13px] font-semibold text-[#344054]">Margin Trend</p>
 
-                                <div className="mt-3 min-h-[80px] mx-auto  p-2">
-                                    <div></div>
+                                <div>
+
+                                    <ReactECharts style={{ height: "111px", width: "270px" }} option={Bar2}></ReactECharts>
                                 </div>
                             </div>
                         </div>
@@ -303,17 +559,17 @@ export default function Home() {
                             <div className="bg-[#F9FAFB] rounded-md h-36 w-42 p-2">
                                 <p className="text-[16px] font-semibold text-[#344054] text-center">Target vs. Actual</p>
 
-                                <div className="mt-3 min-h-[80px] mx-auto h-36 w-32 p-2">
-
+                                <div >
+                                    <ReactECharts style={{ height: "100px", width: "140px" }} option={circle3}></ReactECharts>
                                 </div>
                             </div>
                         </div>
                         <div className="col-span-3">
                             <div className="bg-[#F9FAFB] rounded-md p-2 h-36 w-72">
-                                <p className="text-[16px] font-semibold text-[#344054] text-center">Expence Trend</p>
+                                <p className="text-[13px] font-semibold text-[#344054]">Expence Trend</p>
 
-                                <div className="mt-3 min-h-[80px] mx-auto  p-2">
-                                    <div></div>
+                                <div >
+                                    <ReactECharts style={{ height: "111px", width: "270px" }} option={Bar3}></ReactECharts>
                                 </div>
                             </div>
                         </div>
@@ -353,17 +609,19 @@ export default function Home() {
                             <div className="bg-[#F9FAFB] rounded-md h-36 w-42 p-2">
                                 <p className="text-[16px] font-semibold text-[#344054] text-center">Target vs. Actual</p>
 
-                                <div className="mt-3 min-h-[80px] mx-auto h-36 w-32 p-2">
+                                <div>
+                                    <ReactECharts style={{ height: "120px", width: "140px" }} option={horizontal4}></ReactECharts>
 
                                 </div>
                             </div>
                         </div>
                         <div className="col-span-3">
                             <div className="bg-[#F9FAFB] rounded-md p-2 h-36 w-72">
-                                <p className="text-[16px] font-semibold text-[#344054] text-center">Income Trend</p>
+                                <p className="text-[13px] font-semibold text-[#344054]">Income Trend</p>
 
-                                <div className="mt-3 min-h-[80px] mx-auto  p-2">
-                                    <div></div>
+                                <div>
+                                    <ReactECharts style={{ height: "110px", width: "270px" }} option={triplebar4}></ReactECharts>
+
                                 </div>
                             </div>
                         </div>
