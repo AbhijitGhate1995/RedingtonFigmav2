@@ -4,6 +4,7 @@ import { Sidebar } from 'primereact/sidebar';
 import { Dropdown } from 'primereact/dropdown';
 import { Button } from 'primereact/button';
 import { SplitButton } from 'primereact/splitbutton';
+import { Badge } from 'primereact/badge';
 
 function Designs() {
     const [visible, setVisible] = useState(false);
@@ -40,28 +41,50 @@ function Designs() {
     return (
         <div>
             <div class="min-h-screen flex fixed">
-                <nav class={`grid w-16 flex-none bg-green-900 rounded-r-xl px-2 py-3 mt-1 mb-1 h-screen hover:w-44 group-hover:shadow-xl duration-500 z-10  group-hover:visible delay-150`}>
-                    <div className='justify-between h-[500px] flex-col justify-between'>
-                        <img src='../assest/img/Redington (India) 1.png' />
-                        <div className=''>
-                            <button className='flex mt-7 px-2  cursor-pointer text-white origin-left'>
-                                <img src='../assest/img/Vector.png' width={"20px"} className='mr-5' /><spn className='absolute opacity-0 invisible group-hover:animate-tooltip_show ml-2'  >Home</spn>
-                            </button>
-                            <div className='flex mt-4 px-1 cursor-pointer text-white btn btn-bg-gray-900'>
-                                <img src='../assest/img/Home.png' width={"30px"} className='mr-4' /><spn className='hidden'>Dashboard</spn>
+                <nav class={`grid w-16 flex-none bg-green-900 rounded-r-xl px-2 py-3 mt-1 mb-1 h-screen hover:w-44 group-hover:shadow-xl duration-500 z-10  group-hover:visible delay-150 `}>
+                    <div>
+                        <ul className=''>
+                            <div className='justify-between h-[500px] flex-col justify-between '>
+                                <div className='flex'>
+                                    <img src='../assest/img/Redington (India) 1.png' />
+                                    {/* <img src='../assest/img/' /> */}
+                                </div>
+
+                                <div className='text-white'>
+                                    <li>
+                                    <button className=' p-3 flex mt-7 px-2 hover:bg-green-500 hover:w-40  cursor-pointer text-white rounded-md'>
+                                        <img src='../assest/img/Vector.png' width={"20px"} className='mr-5' />
+                                        <div className='text-white opacity-0 hover:opacity-100'>Home</div>
+                                    </button>
+                                    </li>
+                                    
+                                    <div className='flex mt-4 px-1 cursor-pointer text-white btn btn-bg-gray-900'>
+                                    <li>
+                                        <button className='w-10 flex absolute  hover:bg-green-500 p-3 rounded-md px-1 hover:w-40 text-invisible '>
+                                            <img src='../assest/img/Home.png' width={"30px"} className=' mr-4 ' />
+                                            <spn className=' text-white opacity-0 hover:opacity-100 '>Dashboard</spn>
+                                        </button>
+                                        </li>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <div className='sidebar-footer'>
-                        <span className='block mb-5 px-3'>
-                            <img src='../assest/img/setting.png' width={"20px"} />
-                        </span>
-                        <span className='block px-3'>
-                            <img src='../assest/img/export.png' width={"20px"} />
-                        </span>
+                            <div className='sidebar-footer text-white'>
+                                <li>
+                                <button className='flex hover:bg-green-500 p-3 rounded-md  hover:w-40'>
+                                    <img src='../assest/img/setting.png' width={"25px"} />
+                                    <spn className='ml-2 text-white opacity-0 hover:opacity-100'>Setting</spn>
+                                </button>
+                                </li>
+                                <li>
+                                <button className='w-10 flex p-2 hover:bg-green-500 rounded-md mb-5 hover:w-40'>
+                                    <img src='../assest/img/export.png' width={"25px"} />
+                                    <span className='ml-2 visible hover:visible text-white opacity-0 hover:opacity-100'>Logout</span>
+                                </button>
+                                </li>
+                            </div>
+                        </ul>
                     </div>
-
                 </nav>
 
                 <main class="flex-1 min-w-0 overflow-auto fixed ml-20 mt-1 p-2 z-0">
@@ -72,28 +95,20 @@ function Designs() {
                                 <div className='text-xl '>At a Glance</div>
                             </div>
                             <div className='object-right-top flex item-center p-0 gap-5 items-center'>
-                                <div className='w-6 h-6 items-center rounded-full bg-gray-200'>
-                                    <img className='ml-1 mt-1' src='../assest/img/notification.png' />
+                                <div className='w-10 h-10 items-center rounded-full bg-gray-200'>
+                                    <i className="pi pi-bell p-overlay-badge ml-2 mt-2" style={{ fontSize: '1.6rem' }}>
+                                        <Badge value="2"></Badge>
+                                    </i>
                                 </div>
                                 <div className='flex row center p-0 '>
                                     <div className='row flex'>
+                                        <div className='flex'><img src='../assest/img/Ellipse 1.png' className='w-auto' />
+                                            <img src='../assest/img/Frame 36835.png' className='w-auto m-2' /></div>
+                                        <SplitButton model={items} severity="secondary" className=' ' text>
 
-                                        {/* <div className='flex-none'>
-                                            <div className='text-md flex-none'>
-                                                Alex Mathew</div>
-                                            <div className='text-sm'>
-                                                Reportee</div>
-                                        </div> */}
+                                        </SplitButton>
                                     </div>
-                                    <Button model={items} severity="secondary" className=' hover:bg-white-900 z-10 h-12 m-0 p-0' text>
-                                        <img src='../assest/img/Ellipse 1.png' className='w-auto' />
-                                        <img src='../assest/img/Frame 36835.png' className='w-auto m-2' />
-                                        <img src='../assest/img/Arrow.png' />
-                                    </Button>
-
-
                                 </div>
-                               
                             </div>
                         </div>
                         <div className='flex row justify-between absolute h-14 top-[60px] mx-10'>
@@ -147,7 +162,7 @@ function Designs() {
                                     <h1 className='text-xl font-medium '><b> &#8377; 58.53 Cr.</b></h1>
                                 </div>
                             </div>
-                            <div className=' flex  flex-row place-content-center space-x-4'>
+                            <div className=' flex  flex-row place-content-center space-x-4 e'>
                                 <div className='ml-2'><h2 className='text-sm text-center'>LY Value</h2>
                                     <h1 className='text-center'><b>&#8377;46.37 Cr</b></h1>
                                 </div>
