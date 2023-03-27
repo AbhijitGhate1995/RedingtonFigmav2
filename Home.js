@@ -256,13 +256,17 @@ export default function Home() {
                 type: 'shadow'
             }
         },
+       
         legend: {
-            top: { fontSize: '100px' },
+            top: '1%',
+            left: 'right',
+            
         },
         grid: {
-            left: '6%',
-            right: '1%',
-            bottom: '2%',
+            left: '23%',
+            right: '2%',
+            bottom: '3%',
+            top:'7%',
 
         },
         xAxis: {
@@ -296,31 +300,47 @@ export default function Home() {
 
 
     };
-    const triplebar4 = {
-        title: {
+    const Circle4 = {
+        tooltip: {
+            trigger: 'item'
+        },
+        legend: {
+            top: '5%',
+            left: 'center',
+            show: false
+        },
+        series: [
+            {
+                type: 'pie',
+                radius: ['50', '50%'],
+                avoidLabelOverlap: false,
+                label: {
+                    show: true,
+                    position: 'center',
+                    itemStyle: {
+                        color: "black"
+                    }
+                },
+                emphasis: {
+                    label: {
+                        show: true,
+                        fontSize: 40,
+                        fontWeight: 'bold'
+                    }
+                },
+                labelLine: {
+                    show: true
+                },
+                data: [
+                    { value: 70, name: "70%", itemStyle: { color: '#B9B062' } },
+                    { value: 30, itemStyle: { color: '#E4E7EC' }, },
 
-        },
-        grid: {
-            left: "60",
-            top: "70",
-            bottom: "20",
-            right: "9"
-        },
-        legend: {},
-        tooltip: {},
-        dataset: {
-            source: [
-                ['product', 'Opening', 'Closing', 'Average', 'Trend Line'],
-                ['FY 19-20', 400, 1000, 800, 900],
-                ['FY 20-21', 900, 1300, 1200, 1000],
-                ['FY 21-22', 900, 1300, 1200, 1000],
-                ['Fy 22-23', 900, 1300, 1200, 1000]
-            ]
-        },
-        xAxis: { type: 'category' },
-        yAxis: {},
-        series: [{ type: 'bar', itemStyle: { normal: { color: '#029046' } } }, { type: 'bar', itemStyle: { normal: { color: '#E73369' } } }, { type: 'bar', itemStyle: { normal: { color: '#526652' } } }, { type: 'line', itemStyle: { normal: { color: '#FDB022' } } }]
+                ]
+            }
+        ]
+
     };
+   
 
     return (
 
@@ -335,7 +355,7 @@ export default function Home() {
                                 <h1 className='text-xl font-medium '><b> &#8377; 58.53 Cr.</b></h1>
                             </div>
                         </div>
-                        <div className='bg-white rounded-md  flex  flex-row place-content-center space-x-4 pb-2 pt-1'>
+                        <div className='bg-white rounded-md flex  flex-row place-content-center space-x-4 pb-2 pt-1'>
                             <div className='ml-2'><h2 className="text-[12px] font-normal text-[#344054] text-center">LY Value</h2>
                                 <h1 className="text- font-[500] text-[#262D29]">&#8377;46.37 Cr</h1>
                             </div>
@@ -575,6 +595,7 @@ export default function Home() {
                         </div>
 
                     </div>
+                  
                 </div>
                 <div className="bg-white py-3 rounded-xl border  border-[#E1E6E3] px-4">
                     <div className="flex justify-between mb-4">
@@ -610,7 +631,7 @@ export default function Home() {
                                 <p className="text-[16px] font-semibold text-[#344054] text-center">Target vs. Actual</p>
 
                                 <div>
-                                    <ReactECharts style={{ height: "120px", width: "140px" }} option={horizontal4}></ReactECharts>
+                                    <ReactECharts style={{ height: "120px", width: "140px" }} option={Circle4}></ReactECharts>
 
                                 </div>
                             </div>
@@ -620,7 +641,7 @@ export default function Home() {
                                 <p className="text-[13px] font-semibold text-[#344054]">Income Trend</p>
 
                                 <div>
-                                    <ReactECharts style={{ height: "110px", width: "270px" }} option={triplebar4}></ReactECharts>
+                                    <ReactECharts style={{ height: "110px", width: "270px" }} option={horizontal4}></ReactECharts>
 
                                 </div>
                             </div>
