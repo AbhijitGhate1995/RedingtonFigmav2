@@ -466,9 +466,9 @@ function Header() {
     return (
         <div>
             <div class="min-h-screen flex">
-                <nav class={`grid w-16 flex-none bg-green-900 rounded-r-xl px-2 py-3 mt-1 mb-1 h-screen hover:w-44 group-hover:shadow-xl duration-500 z-10  group-hover:visible delay-150 `}>
+                <nav class={`grid w-16 flex-none bg-green-900 rounded-r-xl px-2 py-3 mt-1 mb-1 h-screen hover:w-44 group-hover:shadow-xl duration-500 z-10 fixed group-hover:visible delay-150 `}>
                     <div>
-                        <ul className=''>
+                        <ul>
                             <div className='justify-between h-[500px] flex-col justify-between '>
                                 <div className='flex'>
                                     <img src='../assest/img/Redington (India) 1.png' />
