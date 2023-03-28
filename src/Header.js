@@ -334,10 +334,8 @@ function Header() {
         },
 
         legend: {
-            top: '1%',
-          
+            top: '1%',          
             left: '90',
-
         },
         grid: {
             left: '10%',
@@ -348,14 +346,11 @@ function Header() {
         },
         xAxis: {
             type: 'value',
-
         },
         yAxis: {
-            type: 'category',
-            
+            type: 'category',            
         },
         series: [
-
             {
                 itemStyle: { normal: { color: '#526652' } },
                 type: 'bar',
