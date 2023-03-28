@@ -65,10 +65,6 @@ function Header() {
         { name: "2021-22", code: "2021-22" },
     ];
 
-
-
-
-
     const items = [
         {
             icon: 'pi pi-user',
@@ -469,7 +465,7 @@ function Header() {
                 <nav class={`grid w-16 flex-none bg-green-900 rounded-r-xl px-2 py-3 mt-1 mb-1 h-screen hover:w-44 group-hover:shadow-xl duration-500 z-10 fixed group-hover:visible delay-150 `}>
                     <div>
                         <ul>
-                            <div className='justify-between h-[500px] flex-col justify-between '>
+                            <div className='justify-between h-[500px] flex-col '>
                                 <div className='flex'>
                                     <img src='../assest/img/Redington (India) 1.png' />
                                     {/* <img src='../assest/img/' /> */}
@@ -572,7 +568,7 @@ function Header() {
 
 
                                 <div className='flex justify-end mt-3'>
-                                    <Sidebar visible={visible} position="right" onHide={() => setVisible(false)} className="w-full md:w-20rem lg:w-30rem">
+                                    <Sidebar visible={filter} position="right" onHide={() => setFilter(false)} className="w-full md:w-20rem lg:w-30rem">
                                         <div className="flex row justify-between absolute h-14 top-[60px] mx-10">
                                             <div className="grid grid-cols-2 justify-evenly">
                                                 <div className="flex justify-between">
@@ -584,7 +580,7 @@ function Header() {
                                                     >
                                                         <h2>Sidebar</h2>
                                                     </Sidebar>
-                                                    <a className="" onClick={() => setVisible(true)}>
+                                                    <a onClick={() => setFilter(true)}>
                                                         <img src="../Filter.png" />
                                                     </a>
                                                     <div className="flex justify-between mx-5">
