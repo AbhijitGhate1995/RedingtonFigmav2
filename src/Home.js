@@ -344,7 +344,7 @@ export default function Home() {
 
     return (
 
-        < div className='bg-slate-100 mt-2'>
+        <div className='bg-slate-100 mt-2'>
 
             <div className="grid flex-row gap-3 2xl:grid-cols-4 xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-1 overallstatus">
                 <div className='hover:drop-shadow-lg'>
