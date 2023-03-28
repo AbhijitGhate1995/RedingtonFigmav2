@@ -348,14 +348,12 @@ function Header() {
         },
         xAxis: {
             type: 'value',
-
         },
         yAxis: {
             type: 'category',
             
         },
         series: [
-
             {
                 itemStyle: { normal: { color: '#526652' } },
                 type: 'bar',
