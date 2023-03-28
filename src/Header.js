@@ -533,7 +533,7 @@ function Header() {
                             </div>
                         </div>
                         <div className='flex row justify-between absolute h-14 top-[60px] mx-10'>
-                            <div className='grid grid-cols-2 flex justify-evenly'>
+                            <div className='grid grid-cols-2 justify-evenly'>
                                 <div className='flex justify-between'>
                                     <Sidebar visible={filter} position="right" onHide={() => setFilter(false)} className="w-full md:w-20rem lg:w-30rem">
                                         <div>
