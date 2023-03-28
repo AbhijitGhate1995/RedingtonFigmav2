@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import RedingtonFigma from './Figma';
+import Home from './Home';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       </header>
 =======
     <div >
+  <Home></Home>
       <RedingtonFigma></RedingtonFigma>
 >>>>>>> 3fec8a6b08ec1dd86fe76b184ab73e299b9dfa3c
     </div>
