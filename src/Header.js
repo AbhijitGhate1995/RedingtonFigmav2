@@ -1,4 +1,6 @@
 import React from 'react';
+
+import 'primeicons/primeicons.css';
 import { useState } from 'react';
 import { Sidebar } from 'primereact/sidebar';
 import { Dropdown } from 'primereact/dropdown';
@@ -333,13 +335,14 @@ function Header() {
 
         legend: {
             top: '1%',
-            left: 'right',
+          
+            left: '90',
 
         },
         grid: {
-            left: '23%',
-            right: '2%',
-            bottom: '3%',
+            left: '10%',
+            right: '7%',
+            bottom: '23%',
             top: '7%',
 
         },
@@ -349,24 +352,24 @@ function Header() {
         },
         yAxis: {
             type: 'category',
-            data: ['Opening', 'Average', 'Closing']
+            
         },
         series: [
 
             {
                 itemStyle: { normal: { color: '#526652' } },
                 type: 'bar',
-                data: [2500, 4300, 3500]
+                data: [2500, 3300, 3500]
             },
             {
-                name: 'Revenue',
+              
                 data: [2900, 3800, 3300, 2100],
                 type: 'bar',
                 backgroundColor: ['var(--green-900)']
 
             },
             {
-                name: 'Trend Line',
+              
                 data: [2200, 3100, 2600, 3200],
                 type: 'line'
             }
@@ -374,46 +377,36 @@ function Header() {
 
 
     };
-    const Circle4 = {
-        tooltip: {
-            trigger: 'item'
+    const triplebar = {
+       
+        grid: {
+          left: "60",
+          top: "30",
+          bottom: "20",
+          right: "0",
         },
         legend: {
-            top: '5%',
-            left: 'center',
-            show: false
+          top: 1,
         },
+        tooltip: {},
+        dataset: {
+          source: [
+            ["product", "Opening", "Closing", "Average"],
+            ["FY 19-20", 900, 1300, 1200, 1000],
+            ["FY 20-21", 900, 1300, 1200, 1000],
+            ["FY 21-22", 900, 1300, 1200, 1000],
+            ["Fy 22-23", 900, 1300, 1200, 1000],
+          ],
+        },
+        xAxis: { type: "category" },
+        yAxis: {},
         series: [
-            {
-                type: 'pie',
-                radius: ['50', '50%'],
-                avoidLabelOverlap: false,
-                label: {
-                    show: true,
-                    position: 'center',
-                    itemStyle: {
-                        color: "black"
-                    }
-                },
-                emphasis: {
-                    label: {
-                        show: true,
-                        fontSize: 40,
-                        fontWeight: 'bold'
-                    }
-                },
-                labelLine: {
-                    show: true
-                },
-                data: [
-                    { value: 70, name: "70%", itemStyle: { color: '#B9B062' } },
-                    { value: 30, itemStyle: { color: '#E4E7EC' }, },
-
-                ]
-            }
-        ]
-
-    };
+          { type: "bar", itemStyle: { normal: { color: "#029046" } } },
+          { type: "bar", itemStyle: { normal: { color: "#E73369" } } },
+          { type: "bar", itemStyle: { normal: { color: "#526652" } } },
+          { type: "line", itemStyle: { normal: { color: "#FDB022" } } },
+        ],
+      };
     const SimpleBar = {
         xAxis: {
             type: "category",
@@ -458,14 +451,14 @@ function Header() {
         ],
     };
 
-    const [open, setOpen] = useState(true);
+
     return (
-        <div>
-            <div class="min-h-screen flex">
+        <div className='bg-slate-100'>
+            <div class="min-h-screen flex ">
                 <nav class={`grid w-16 flex-none bg-green-900 rounded-r-xl px-2 py-3 mt-1 mb-1 h-screen hover:w-44 group-hover:shadow-xl duration-500 z-10 fixed group-hover:visible delay-150 `}>
                     <div>
                         <ul>
-                            <div className='justify-between h-[500px] flex-col '>
+                            <div className='justify-between h-[500px] flex-col'>
                                 <div className='flex'>
                                     <img src='../assest/img/Redington (India) 1.png' />
                                     {/* <img src='../assest/img/' /> */}
@@ -508,9 +501,9 @@ function Header() {
                     </div>
                 </nav>
 
-                <main class="flex-1 min-w-0  ml-20 mt-1 p-2 z-0">
-                    <header class=" p-0 w-full h-28">
-                        <div className='flex items-center justify-between px-5'>
+                <main class="flex-1 min-w-0  ml-20 mt-1 z-0">
+                    <header class=" p-0 w-full h-32">
+                        <div className='flex items-center justify-between '>
                             <div className='object-left'>
                                 <div className='flex lg:flex-1 text-sm'>Dashboard</div>
                                 <div className='text-xl '>At a Glance</div>
@@ -521,19 +514,21 @@ function Header() {
                                         <Badge value="2"></Badge>
                                     </i>
                                 </div>
-                                <div className='flex row center p-0 '>
+                                <div className='flex row center p-3'>
                                     <div className='row flex'>
                                         <div className='flex'><img src='../assest/img/Ellipse 1.png' className='w-auto' />
                                             <img src='../assest/img/Frame 36835.png' className='w-auto m-2' /></div>
-                                        <SplitButton model={items} severity="secondary" className=' ' text>
+                                       
+                                        
+                                        <i className="pi-align-left"></i>
 
-                                        </SplitButton>
+                                      
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className='flex row justify-between absolute h-14 top-[60px] mx-10'>
-                            <div className='grid grid-cols-2 justify-evenly'>
+                        <div className='flex row justify-between absolute h-14 '>
+                            <div className='grid grid-cols-2 justify-between'>
                                 <div className='flex justify-between'>
                                     <Sidebar visible={filter} position="right" onHide={() => setFilter(false)} className="w-full md:w-20rem lg:w-30rem">
                                         <div>
@@ -545,30 +540,30 @@ function Header() {
                                                         <Dropdown value={selectedSUB} onChange={(e) => setSelectedSUB(e.value)} options={SUB} optionLabel="name"
                                                             placeholder="Select a SUB" className="w-22 md:w-12rem text-sm h-7 items-center" />
                                                     </div>
-                                                    <div className=''></div>
+                                                    
                                                 </div>
                                             </div>
                                         </div>
 
                                     </Sidebar>
-                                    <a className='' onClick={() => setVisible(true)}  ><img src='./assest/img/_button base.png' /></a>
-                                    <div className='flex justify-between mx-5'>
+                                    <a  onClick={() => setVisible(true)}  ><img src='./assest/img/_button base.png' className='mt-6' /></a>
+                                    <div className='flex justify-between mx-12'>
                                         <div className="flex-1 mt-0 mx-0">
-                                            <label className='text-sm font-light'>Fiancial Year</label>
+                                            <div><label className='text-sm font-light'>Fiancial Year</label></div>
                                             <Dropdown value={selectedYear} onChange={(e) => setSelectedYear(e.value)} options={Year} optionLabel="name"
                                                 placeholder="2021-22" className="w-22 md:w-12rem text-sm h-7 items-center m-auto pt-0" />
                                         </div>
-                                        {/* <div className="flex justify-between mx-5"> */}
-                                        <label className='text-sm font-light'>SUB</label>
+                                        <div className="ml-4"> 
+                                       <div> <label className='text-sm font-light'>SUB</label></div>
                                         <Dropdown value={selectedSUB} onChange={(e) => setSelectedSUB(e.value)} options={SUB} optionLabel="name"
                                             placeholder="Select a SUB" className="w-22 md:w-12rem text-sm h-7 items-center" />
-                                        {/* </div> */}
+                                        </div>
                                     </div>
                                 </div>
 
 
-                                <div className='flex justify-end mt-3'>
-                                    <Sidebar visible={filter} position="right" onHide={() => setFilter(false)} className="w-full md:w-20rem lg:w-30rem">
+                                <div className='flex justify-end '>
+                                    <Sidebar visible={visible} position="right" onHide={() => setVisible(false)} className="w-full md:w-20rem lg:w-30rem">
                                         <div className="flex row justify-between absolute h-14 top-[60px] mx-10">
                                             <div className="grid grid-cols-2 justify-evenly">
                                                 <div className="flex justify-between">
@@ -717,27 +712,21 @@ function Header() {
                                                             <ReactECharts option={upsideBar} />
                                                         </div>
                                                     </Sidebar>
-                                                    <Button
-                                                        onClick={() => setVisible(true)}
-                                                        severity="secondary"
-                                                        className="bg-surface-900 h-8"
-                                                    >
-                                                        View Performance
-                                                    </Button>
+                                                    
                                                 </div>
                                             </div>
                                         </div>
                                     </Sidebar>
-                                    <Button onClick={() => setVisible(true)} severity="secondary" className='bg-surface-900 h-8'>Parent component</Button>
+                                    <Button onClick={() => setVisible(true)} severity="secondary"  className='bg-surface-900 h-8 w-24 p-2 mt-5'>status</Button>
                                 </div>
 
                             </div>
 
                         </div>
                     </header>
-                    <div className='bg-slate-100 mt-2'>
+                    <div >
 
-                        <div className="grid flex-row gap-3 2xl:grid-cols-4 xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-1 overallstatus">
+                        <div className="grid flex-row gap-3 2xl:grid-cols-4 xl:grid-cols-4 lg:grid-cols-4 mt-5 md:grid-cols-4 sm:grid-cols-1 overallstatus">
                             <div className='hover:drop-shadow-lg'>
                                 <div className='shadow border rounded-md ' >
                                     <div className='hover:bg-slate-200 flex items-center pl-7 h-12 p-9 space-x-4 bg-[#EDF2F0]'>
@@ -845,19 +834,19 @@ function Header() {
                                 <div className="flex gap-2 mb-3 justify-evenly">
                                     <div className="p-3 border border-[#E1E6E3] rounded-[5px] grow"><p className="text-[12px] font-normal text-[#344054]">Gross Sale</p>
                                         <div className="flex items-center gap-1"> <b>&#8377;199.63 Cr</b>
-                                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span><img src='Vector (1).png' /><img src='Green.png' /></span>
+                                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span className='flex'><img src='Vector (1).png' /><img src='Green.png' /></span>
                                             </div>
                                         </div>
                                     </div>
                                     <div className="p-3 border border-[#E1E6E3] rounded-[5px] grow"><p className="text-[12px] font-normal text-[#344054]">Revenue</p>
                                         <div className="flex items-center gap-1"> <b>&#8377;197 Cr</b>
-                                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span><img src='Vector (1).png' /><img src='Green.png' /></span>
+                                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span className='flex'><img src='Vector (1).png' /><img src='Green.png' /></span>
                                             </div>
                                         </div>
                                     </div>
                                     <div className="p-3 border border-[#E1E6E3] rounded-[5px] grow"><p className="text-[12px] font-normal text-[#344054]">Revenue/Group</p>
                                         <div className="flex items-center gap-1"> <b>&#8377;17 Cr</b>
-                                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span><img src='Vector.png' /><img src='Pink.png' /></span>
+                                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span className='flex'><img src='Vector.png' /><img src='Pink.png' /></span>
                                             </div>
                                         </div>
                                     </div>
@@ -875,11 +864,11 @@ function Header() {
                                         </div>
                                     </div>
                                     <div className="col-span-3">
-                                        <div className="bg-[#F9FAFB] rounded-md p-2 h-36 w-72">
+                                        <div className="bg-[#F9FAFB] rounded-md p-2 h-36 w-80">
 
                                             <p className="text-[13px] font-semibold text-[#344054]">Revenue Trend</p>
                                             <div >
-                                                <ReactECharts style={{ height: "111px", width: "270px" }} option={Bar}></ReactECharts>
+                                                <ReactECharts style={{ height: "111px", width: "300px" }} option={Bar}></ReactECharts>
                                             </div>
                                         </div>
                                     </div>
@@ -895,19 +884,19 @@ function Header() {
                                 <div className="flex gap-2 mb-3 justify-evenly">
                                     <div className="p-3 border border-[#E1E6E3] rounded-[5px] grow"><p className="text-[12px] font-normal text-[#344054]">GM before Provision</p>
                                         <div className="flex items-center gap-1"> <b>&#8377;45 Cr</b>
-                                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span><img src='Vector (1).png' /><img src='Green.png' /></span>
+                                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span className='flex'><img src='Vector (1).png' /><img src='Green.png' /></span>
                                             </div>
                                         </div>
                                     </div>
                                     <div className="p-3 border border-[#E1E6E3] rounded-[5px] grow"><p className="text-[12px] font-normal text-[#344054]">GM after Provision</p>
                                         <div className="flex items-center gap-1"> <b>&#8377;50 Cr</b>
-                                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span><img src='Vector.png' /><img src='Pink.png' /></span>
+                                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span className='flex'><img src='Vector.png' /><img src='Pink.png' /></span>
                                             </div>
                                         </div>
                                     </div>
                                     <div className="p-3 border border-[#E1E6E3] rounded-[5px] grow"><p className="text-[12px] font-normal text-[#344054]">GM%</p>
                                         <div className="flex items-center gap-1"> <b>4%</b>
-                                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span><img src='Vector.png' /><img src='Pink.png' /></span>
+                                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span className='flex'><img src='Vector.png' /><img src='Pink.png' /></span>
                                             </div>
                                         </div>
                                     </div>
@@ -925,12 +914,12 @@ function Header() {
                                         </div>
                                     </div>
                                     <div className="col-span-3">
-                                        <div className="bg-[#F9FAFB] rounded-md p-2 h-36 w-72">
+                                        <div className="bg-[#F9FAFB] rounded-md p-2 h-36 w-80">
                                             <p className="text-[13px] font-semibold text-[#344054]">Margin Trend</p>
 
                                             <div>
 
-                                                <ReactECharts style={{ height: "111px", width: "270px" }} option={Bar2}></ReactECharts>
+                                                <ReactECharts style={{ height: "111px", width: "300px" }} option={Bar2}></ReactECharts>
                                             </div>
                                         </div>
                                     </div>
@@ -946,19 +935,19 @@ function Header() {
                                 <div className="flex gap-2 mb-3 justify-evenly">
                                     <div className="p-3 border border-[#E1E6E3] rounded-[5px] grow"><p className="text-[12px] font-normal text-[#344054]">Expence</p>
                                         <div className="flex items-center gap-1"> <b>&#8377;17 Cr</b>
-                                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span><img src='Vector (1).png' /><img src='Green.png' /></span>
+                                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span className='flex'><img src='Vector (1).png' /><img src='Green.png' /></span>
                                             </div>
                                         </div>
                                     </div>
                                     <div className="p-3 border border-[#E1E6E3] rounded-[5px] grow"><p className="text-[12px] font-normal text-[#344054]">Expence Under Managment</p>
                                         <div className="flex items-center gap-1"> <b>&#8377;10 Cr</b>
-                                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span><img src='Vector (1).png' /><img src='Green.png' /></span>
+                                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <div className='flex'><img src='Vector (1).png' /><img src='Green.png' /></div>
                                             </div>
                                         </div>
                                     </div>
                                     <div className="p-3 border border-[#E1E6E3] rounded-[5px] grow"><p className="text-[12px] font-normal text-[#344054]">EUM</p>
                                         <div className="flex items-center gap-1"> <b>4%</b>
-                                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span><img src='Vector.png' /><img src='Pink.png' /></span>
+                                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim flex"> <span className='flex'><img src='Vector.png' /><img src='Pink.png' /></span>
                                             </div>
                                         </div>
                                     </div>
@@ -976,11 +965,11 @@ function Header() {
                                         </div>
                                     </div>
                                     <div className="col-span-3">
-                                        <div className="bg-[#F9FAFB] rounded-md p-2 h-36 w-72">
+                                        <div className="bg-[#F9FAFB] rounded-md p-2 h-36 w-80">
                                             <p className="text-[13px] font-semibold text-[#344054]">Expence Trend</p>
 
                                             <div >
-                                                <ReactECharts style={{ height: "111px", width: "270px" }} option={Bar3}></ReactECharts>
+                                                <ReactECharts style={{ height: "111px", width: "300px" }} option={Bar3}></ReactECharts>
                                             </div>
                                         </div>
                                     </div>
@@ -997,31 +986,31 @@ function Header() {
                                 <div className="flex gap-2 mb-3 justify-evenly">
                                     <div className="p-3 w-2.4/12 border border-[#E1E6E3] rounded-[5px] grow"><p className="text-[12px] font-normal text-[#344054]">EBIT</p>
                                         <div className="flex items-center gap-1"> <b>&#8377;32.63 Cr</b>
-                                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span><img src='Vector (1).png' /><img src='Green.png' /></span>
+                                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span className='flex'><img src='Vector (1).png' /><img src='Green.png' /></span>
                                             </div>
                                         </div>
                                     </div>
                                     <div className="p-3 w-2.4/12 border border-[#E1E6E3] rounded-[5px] grow"><p className="text-[12px] font-normal text-[#344054]">EBIT%</p>
                                         <div className="flex items-center gap-1"> <b>4.1%</b>
-                                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span><img src='Vector.png' /><img src='Pink.png' /></span>
+                                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span className='flex'><img src='Vector.png' /><img src='Pink.png' /></span>
                                             </div>
                                         </div>
                                     </div>
                                     <div className="p-3 w-2.4/12 border border-[#E1E6E3] rounded-[5px] grow"><p className="text-[12px] font-normal text-[#344054]">EBITDA</p>
                                         <div className="flex items-center gap-1"> <b>&#8377;30 Cr</b>
-                                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span><img src='Vector (1).png' /><img src='Green.png' /></span>
+                                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span className='flex'><img src='Vector (1).png' /><img src='Green.png' /></span>
                                             </div>
                                         </div>
                                     </div>
                                     <div className="p-3 w-2.4/12 border border-[#E1E6E3] rounded-[5px] grow"><p className="text-[12px] font-normal text-[#344054]">EBITDA</p>
                                         <div className="flex items-center gap-1"> <b>&#8377;30 Cr</b>
-                                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span><img src='Vector (1).png' /><img src='Green.png' /></span>
+                                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span className='flex'><img src='Vector (1).png' /><img src='Green.png' /></span>
                                             </div>
                                         </div>
                                     </div>
                                     <div className="p-3 w-2.4/12 border border-[#E1E6E3] rounded-[5px] grow"><p className="text-[12px] font-normal text-[#344054]">EBITDA</p>
                                         <div className="flex items-center gap-1"> <b>&#8377;30 Cr</b>
-                                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span><img src='Vector (1).png' /><img src='Green.png' /></span>
+                                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span className='flex'><img src='Vector (1).png' /><img src='Green.png' /></span>
                                             </div>
                                         </div>
                                     </div>
@@ -1035,17 +1024,17 @@ function Header() {
                                             <p className="text-[16px] font-semibold text-[#344054] text-center">Target vs. Actual</p>
 
                                             <div>
-                                                <ReactECharts style={{ height: "120px", width: "140px" }} option={Circle4}></ReactECharts>
+                                                <ReactECharts style={{ height: "120px", width: "190px" }} option={horizontal4}></ReactECharts>
 
                                             </div>
                                         </div>
                                     </div>
                                     <div className="col-span-3">
-                                        <div className="bg-[#F9FAFB] rounded-md p-2 h-36 w-72">
-                                            <p className="text-[13px] font-semibold text-[#344054]">Income Trend</p>
+                                        <div className="bg-[#F9FAFB] rounded-md p-2 h-36 w-80">
+                                            <p className="text-[13px] font-semibold text-[#344054]">Working Capital Trend</p>
 
                                             <div>
-                                                <ReactECharts style={{ height: "110px", width: "270px" }} option={horizontal4}></ReactECharts>
+                                                <ReactECharts style={{ height: "110px", width: "300px" }} option={triplebar}></ReactECharts>
 
                                             </div>
                                         </div>
