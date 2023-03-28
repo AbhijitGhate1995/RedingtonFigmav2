@@ -1,8 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
+import RedingtonFigma from './Figma';
 
 function App() {
   return (
+<<<<<<< HEAD
     <div className="App">
       //
       <header className="App-header">
@@ -19,6 +21,10 @@ function App() {
           Learn React
         </a>
       </header>
+=======
+    <div >
+      <RedingtonFigma></RedingtonFigma>
+>>>>>>> 3fec8a6b08ec1dd86fe76b184ab73e299b9dfa3c
     </div>
   );
 }
