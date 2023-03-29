@@ -22,7 +22,7 @@ export default function Matrics(){
         {name : 'Target',code : 'All'},
         {name : 'LP',code : 'All'},
         {name : 'LY',code : 'All'},
-    ]
+    ];
 
     const linechart1 ={
         xAxis: {
@@ -266,11 +266,11 @@ export default function Matrics(){
                                         </div>
                                     </td>
                                     <td> + Cloud </td>
-                                    <td className="px-5 py-4 bg-pink-200"> ₹50 Cr</td>
-                                    <td className="px-5 py-4 bg-pink-200"> ₹50 Cr</td>
-                                    <td className="px-5 py-4 bg-pink-200"> ₹50 Cr </td>
-                                    <td className="px-5 py-4 bg-pink-200"> ₹50 Cr</td>
-                                    <td className="px-5 py-4 bg-pink-200"> ₹50 Cr</td>
+                                    <td className="px-5 py-4 bg-pink-100"> ₹50 Cr</td>
+                                    <td className="px-5 py-4 bg-pink-100"> ₹50 Cr</td>
+                                    <td className="px-5 py-4 bg-pink-100"> ₹50 Cr </td>
+                                    <td className="px-5 py-4 bg-pink-100"> ₹50 Cr</td>
+                                    <td className="px-5 py-4 bg-pink-100"> ₹50 Cr</td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -279,11 +279,11 @@ export default function Matrics(){
                                         </div>
                                     </td>
                                     <td> + L&S </td>
-                                    <td className="px-5 py-4 bg-pink-200"> ₹50 Cr</td>
-                                    <td className="px-5 py-4 bg-pink-200"> ₹50 Cr</td>
-                                    <td className="px-5 py-4 bg-pink-200">₹50 Cr </td>
-                                    <td className="px-5 py-4 bg-pink-200"> ₹50 Cr</td>
-                                    <td className="px-5 py-4 bg-pink-200"> ₹50 Cr</td>
+                                    <td className="px-5 py-4 bg-pink-100"> ₹50 Cr</td>
+                                    <td className="px-5 py-4 bg-pink-100"> ₹50 Cr</td>
+                                    <td className="px-5 py-4 bg-pink-100">₹50 Cr </td>
+                                    <td className="px-5 py-4 bg-pink-100"> ₹50 Cr</td>
+                                    <td className="px-5 py-4 bg-pink-100"> ₹50 Cr</td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -292,11 +292,11 @@ export default function Matrics(){
                                         </div>
                                     </td>
                                     <td> + Software</td>
-                                    <td className="px-5 py-4 bg-green-200"> ₹50 Cr</td>
-                                    <td className="px-5 py-4 bg-green-200"> ₹50 Cr</td>
-                                    <td className="px-5 py-4 bg-green-200"> ₹50 Cr </td>
-                                    <td className="px-5 py-4 bg-green-200"> ₹50 Cr</td>
-                                    <td className="px-5 py-4 bg-green-200"> ₹50 Cr </td>
+                                    <td className="px-5 py-4 bg-green-100"> ₹50 Cr</td>
+                                    <td className="px-5 py-4 bg-green-100"> ₹50 Cr</td>
+                                    <td className="px-5 py-4 bg-green-100"> ₹50 Cr </td>
+                                    <td className="px-5 py-4 bg-green-100"> ₹50 Cr</td>
+                                    <td className="px-5 py-4 bg-green-100"> ₹50 Cr </td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -305,11 +305,11 @@ export default function Matrics(){
                                         </div>
                                     </td>
                                     <td> + Security </td>
-                                    <td className="px-5 py-4 bg-yellow-200"> ₹50 Cr</td>
-                                    <td className="px-5 py-4 bg-yellow-200"> ₹50 Cr</td>
-                                    <td className="px-5 py-4 bg-yellow-200"> ₹50 Cr </td>
-                                    <td className="px-5 py-4 bg-yellow-200"> ₹50 Cr</td>
-                                    <td className="px-5 py-4 bg-yellow-200"> ₹50 Cr </td>
+                                    <td className="px-5 py-4 bg-yellow-100"> ₹50 Cr</td>
+                                    <td className="px-5 py-4 bg-yellow-100"> ₹50 Cr</td>
+                                    <td className="px-5 py-4 bg-yellow-100"> ₹50 Cr </td>
+                                    <td className="px-5 py-4 bg-yellow-100"> ₹50 Cr</td>
+                                    <td className="px-5 py-4 bg-yellow-100"> ₹50 Cr </td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -318,11 +318,11 @@ export default function Matrics(){
                                         </div>
                                     </td>
                                     <td> + ESS</td>
-                                    <td className="px-5 py-4 bg-yellow-200"> ₹50 Cr</td>
-                                    <td className="px-5 py-4 bg-yellow-200"> ₹50 Cr</td>
-                                    <td className="px-5 py-4 bg-yellow-200">₹50 Cr </td>
-                                    <td className="px-5 py-4 bg-yellow-200"> ₹50 Cr</td>
-                                    <td className="px-5 py-4 bg-yellow-200"> ₹50 Cr </td>
+                                    <td className="px-5 py-4 bg-yellow-100"> ₹50 Cr</td>
+                                    <td className="px-5 py-4 bg-yellow-100"> ₹50 Cr</td>
+                                    <td className="px-5 py-4 bg-yellow-100"> ₹50 Cr </td>
+                                    <td className="px-5 py-4 bg-yellow-100"> ₹50 Cr</td>
+                                    <td className="px-5 py-4 bg-yellow-100"> ₹50 Cr </td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -331,11 +331,11 @@ export default function Matrics(){
                                         </div>
                                     </td>
                                     <td> + Networking </td>
-                                    <td className="px-5 py-4 bg-green-200"> ₹50 Cr </td>
-                                    <td className="px-5 py-4 bg-green-200"> ₹50 Cr </td>
-                                    <td className="px-5 py-4 bg-green-200"> ₹50 Cr </td>
-                                    <td className="px-5 py-4 bg-green-200"> ₹50 Cr </td>
-                                    <td className="px-5 py-4 bg-green-200"> ₹50 Cr </td>
+                                    <td className="px-5 py-4 bg-green-100"> ₹50 Cr </td>
+                                    <td className="px-5 py-4 bg-green-100"> ₹50 Cr </td>
+                                    <td className="px-5 py-4 bg-green-100"> ₹50 Cr </td>
+                                    <td className="px-5 py-4 bg-green-100"> ₹50 Cr </td>
+                                    <td className="px-5 py-4 bg-green-100"> ₹50 Cr </td>
                                 </tr>
                             </tbody>
                         </table>
