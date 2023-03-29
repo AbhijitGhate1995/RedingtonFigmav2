@@ -254,11 +254,11 @@ export default function Metrics(){
                                         </div>
                                     </td>
                                     <td> + Cloud </td>
-                                    <td className="px-5 py-4"> ₹50 Cr</td>
-                                    <td className="px-5 py-4"> ₹50 Cr</td>
-                                    <td className="px-5 py-4"> ₹50 Cr </td>
-                                    <td className="px-5 py-4"> ₹50 Cr</td>
-                                    <td className="px-5 py-4"> ₹50 Cr</td>
+                                    <td className="px-5 py-4 bg-pink-200"> ₹50 Cr</td>
+                                    <td className="px-5 py-4 bg-pink-200"> ₹50 Cr</td>
+                                    <td className="px-5 py-4 bg-pink-200"> ₹50 Cr </td>
+                                    <td className="px-5 py-4 bg-pink-200"> ₹50 Cr</td>
+                                    <td className="px-5 py-4 bg-pink-200"> ₹50 Cr</td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -267,11 +267,11 @@ export default function Metrics(){
                                         </div>
                                     </td>
                                     <td> + L&S </td>
-                                    <td className="px-5 py-4"> ₹50 Cr</td>
-                                    <td className="px-5 py-4"> ₹50 Cr</td>
-                                    <td className="px-5 py-4">₹50 Cr </td>
-                                    <td className="px-5 py-4"> ₹50 Cr</td>
-                                    <td className="px-5 py-4"> ₹50 Cr</td>
+                                    <td className="px-5 py-4 bg-pink-200"> ₹50 Cr</td>
+                                    <td className="px-5 py-4 bg-pink-200"> ₹50 Cr</td>
+                                    <td className="px-5 py-4 bg-pink-200">₹50 Cr </td>
+                                    <td className="px-5 py-4 bg-pink-200"> ₹50 Cr</td>
+                                    <td className="px-5 py-4 bg-pink-200"> ₹50 Cr</td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -280,11 +280,11 @@ export default function Metrics(){
                                         </div>
                                     </td>
                                     <td> + Software</td>
-                                    <td className="px-5 py-4"> ₹50 Cr</td>
-                                    <td className="px-5 py-4"> ₹50 Cr</td>
-                                    <td className="px-5 py-4"> ₹50 Cr </td>
-                                    <td className="px-5 py-4"> ₹50 Cr</td>
-                                    <td className="px-5 py-4"> ₹50 Cr </td>
+                                    <td className="px-5 py-4 bg-green-200"> ₹50 Cr</td>
+                                    <td className="px-5 py-4 bg-green-200"> ₹50 Cr</td>
+                                    <td className="px-5 py-4 bg-green-200"> ₹50 Cr </td>
+                                    <td className="px-5 py-4 bg-green-200"> ₹50 Cr</td>
+                                    <td className="px-5 py-4 bg-green-200"> ₹50 Cr </td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -293,11 +293,11 @@ export default function Metrics(){
                                         </div>
                                     </td>
                                     <td> + Security </td>
-                                    <td className="px-5 py-4"> ₹50 Cr</td>
-                                    <td className="px-5 py-4"> ₹50 Cr</td>
-                                    <td className="px-5 py-4"> ₹50 Cr </td>
-                                    <td className="px-5 py-4"> ₹50 Cr</td>
-                                    <td className="px-5 py-4"> ₹50 Cr </td>
+                                    <td className="px-5 py-4 bg-yellow-200"> ₹50 Cr</td>
+                                    <td className="px-5 py-4 bg-yellow-200"> ₹50 Cr</td>
+                                    <td className="px-5 py-4 bg-yellow-200"> ₹50 Cr </td>
+                                    <td className="px-5 py-4 bg-yellow-200"> ₹50 Cr</td>
+                                    <td className="px-5 py-4 bg-yellow-200"> ₹50 Cr </td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -306,11 +306,11 @@ export default function Metrics(){
                                         </div>
                                     </td>
                                     <td> + ESS</td>
-                                    <td className="px-5 py-4"> ₹50 Cr</td>
-                                    <td className="px-5 py-4"> ₹50 Cr</td>
-                                    <td className="px-5 py-4">₹50 Cr </td>
-                                    <td className="px-5 py-4"> ₹50 Cr</td>
-                                    <td className="px-5 py-4"> ₹50 Cr </td>
+                                    <td className="px-5 py-4 bg-yellow-200"> ₹50 Cr</td>
+                                    <td className="px-5 py-4 bg-yellow-200"> ₹50 Cr</td>
+                                    <td className="px-5 py-4 bg-yellow-200">₹50 Cr </td>
+                                    <td className="px-5 py-4 bg-yellow-200"> ₹50 Cr</td>
+                                    <td className="px-5 py-4 bg-yellow-200"> ₹50 Cr </td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -319,11 +319,11 @@ export default function Metrics(){
                                         </div>
                                     </td>
                                     <td> + Networking </td>
-                                    <td className="px-5 py-4"> ₹50 Cr </td>
-                                    <td className="px-5 py-4"> ₹50 Cr </td>
-                                    <td className="px-5 py-4"> ₹50 Cr </td>
-                                    <td className="px-5 py-4"> ₹50 Cr </td>
-                                    <td className="px-5 py-4"> ₹50 Cr </td>
+                                    <td className="px-5 py-4 bg-green-200"> ₹50 Cr </td>
+                                    <td className="px-5 py-4 bg-green-200"> ₹50 Cr </td>
+                                    <td className="px-5 py-4 bg-green-200"> ₹50 Cr </td>
+                                    <td className="px-5 py-4 bg-green-200"> ₹50 Cr </td>
+                                    <td className="px-5 py-4 bg-green-200"> ₹50 Cr </td>
                                 </tr>
                             </tbody>
                         </table>
