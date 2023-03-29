@@ -27,20 +27,27 @@ export default function Matrics(){
     const linechart1 ={
         xAxis: {
             type: 'category',
-            data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+            data: ['Q1', 'Q2', 'Q3', 'Q4', 'Q1', 'Q2', 'Q3']
           },
           yAxis: {
             type: 'value'
           },
+          
           series: [
             {
-              data: [820, 932, 901, 934, 1290, 1330, 1320],
+              data: [200, 30, 50, 96, 60, 76, 84],
               itemStyle: { normal: { color: "#385238" } },
               type: 'line',
               smooth: true,
-              symbolSize : 40,
+              symbolSize : 30,
               label: {
-                show: true
+                show: true,
+                position: 'inside',
+                
+              },
+              itemStyle: {
+                borderColor: 'transparent',
+                backgroundColor: "#385238",
               },
             }
           ]
@@ -75,11 +82,6 @@ export default function Matrics(){
             },
           ]
     };
-    const [products, setProducts] = useState([]);
-
-    useEffect(() => {
-        ProductServicE.getProductsMini().then(data => setProducts(data));
-    }, []);
     return(
         <div>
             <div className="mt-10 flex-row grid 2xl:grid-cols-2 xl:grid-cols-2 lg:grid-cols-2 sm:grid-cols-1 gap-4 mb-10">
@@ -88,15 +90,15 @@ export default function Matrics(){
                         <div className=" font-semibold text-lg">Metrics</div>
                     </div>
                     <div className="relative overflow-x-auto sm:rounded-lg p-1">
-                      <DataTable value={products} tableStyle={{ minWidth: '50rem' }}>
+                      {/* <DataTable value={products} tableStyle={{ minWidth: '50rem' }}>
                         <Column field="metrics" header='Matrics' sortable style={{width: '25%'}}></Column>
                         <Column field="target" header='Target' sortable style={{width: '25%'}}></Column>
                         <Column field="achievement " header='Achievement' sortable style={{width: '25%'}}></Column>
                         <Column field="targetvar" header='Target Var %' sortable style={{width: '25%'}}></Column>
                         <Column field="period" header='Matrics' sortable style={{width: '25%'}}></Column>
                         <Column field="var" header='Last Period Var %' sortable style={{width: '25%'}}></Column>
-                      </DataTable>
-                        <table className="w-full text-sm">
+                      </DataTable> */}
+                        <table className="w-full text-sm border-2 border-slate-600">
                             <thead>
                                 <tr>
                                     <th scope="col" className=" p-4">
@@ -242,7 +244,7 @@ export default function Matrics(){
                         </div>
                         
                         <div>   
-                        <table className="w-full text-sm">
+                        <table className="w-full text-sm border-2 border-slate-600 mt-2">
                             <thead>
                                 <tr>
                                     <th scope="col" className=" p-4">
