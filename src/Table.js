@@ -17,7 +17,7 @@ export default function Table() {
             <div className='m-5'>
                         <div className='text-xl font-normal'>Detailed View</div>
                     </div>
-                    <hr/>
+                <hr/>
             <div className="card">
                 <DataTable value={products} removableSort tableStyle={{ minWidth: '50rem' }}>
                     <Column field="SUB" header="SUB" sortable style={{ width: '25%' }}></Column>

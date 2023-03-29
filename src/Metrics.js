@@ -4,7 +4,8 @@ import { Button } from "primereact/button";
 import { Dropdown } from "primereact/dropdown";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
-import { ProductServicE } from "./ProductServicE";
+import { ProductService } from "./ProductService";
+import {ProdShop} from "./ProdShop";
 import { ProductDimension } from "./ProductDimension";
 
 export default function Matrics() {
@@ -81,17 +82,21 @@ export default function Matrics() {
     ],
   };
 
+  // Metrics Table
   const [products, setProducts] = useState([]);
+  useEffect(() => {
+    ProdShop.getProductsMini().then((data) => setProducts(data));
+  }, []);
+
+
+  // Dimention Table
   const [product, setProduct] = useState([]);
 
   useEffect(() => {
     ProductDimension.getProductsMini().then((data) => setProduct(data));
   }, []);
 
-  useEffect(() => {
-    ProductServicE.getProductsMini().then((data) => setProducts(data));
-  }, []);
-
+  
   return (
     <div>
       <div className="mt-10 flex-row grid 2xl:grid-cols-2 xl:grid-cols-2 lg:grid-cols-2 sm:grid-cols-1 gap-4 mb-10">
