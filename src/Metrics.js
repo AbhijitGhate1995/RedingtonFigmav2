@@ -1,10 +1,13 @@
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
 import ReactECharts from "echarts-for-react";
 import { Button } from "primereact/button";
 import { Dropdown } from "primereact/dropdown";
+import { DataTable } from 'primereact/datatable';
+import { Column } from 'primereact/column';
+import { ProductShop } from "./ProductShop";
 
 
-export default function Metrics(){
+export default function Matrics(){
 
     const [selectedSUB, setSelectedSUB] = useState(null);
     const SUB = [
@@ -39,7 +42,6 @@ export default function Metrics(){
               label: {
                 show: true
               },
-              position: inside
             }
           ]
     };
@@ -72,8 +74,11 @@ export default function Metrics(){
               data: [6500, 5500, 4000, 3500, 2500, 1500]
             },
           ]
-
-    }
+    };
+    const [products, setProducts] = useState([]);
+    useEffect(() => {
+      ProductShop.then(data => setProducts(data));
+  }, []);
     return(
         <div>
             <div className="mt-10 flex-row grid 2xl:grid-cols-2 xl:grid-cols-2 lg:grid-cols-2 sm:grid-cols-1 gap-4 mb-10">
@@ -82,6 +87,14 @@ export default function Metrics(){
                         <div className=" font-semibold text-lg">Metrics</div>
                     </div>
                     <div className="relative overflow-x-auto sm:rounded-lg p-1">
+                      <DataTable value={products}>
+                        <Column field="metrics" header='Matrics' sortable style={{width: '25%'}}></Column>
+                        <Column field="target" header='Target' sortable style={{width: '25%'}}></Column>
+                        <Column field="achievement " header='Achievement' sortable style={{width: '25%'}}></Column>
+                        <Column field="targetvar" header='Target Var %' sortable style={{width: '25%'}}></Column>
+                        <Column field="period" header='Matrics' sortable style={{width: '25%'}}></Column>
+                        <Column field="var" header='Last Period Var %' sortable style={{width: '25%'}}></Column>
+                      </DataTable>
                         <table className="w-full text-sm">
                             <thead>
                                 <tr>
@@ -100,7 +113,7 @@ export default function Metrics(){
                                 <tr>
                                     <td>
                                         <div><input id="checkbox-table-search-1" type={"checkbox"} className=' w-4 h-4 text-green-600 bg-white border-gray-300 rounded'/>
-                                          <label for='checkbox-table-search-1'>checkbox</label>
+                                        
                                         </div>
                                     </td>
                                     <td>Gross Revenue (₹)</td>
@@ -112,8 +125,7 @@ export default function Metrics(){
                                 </tr>
                                 <tr>
                                     <td>
-                                        <div><input id="checkbox-table-search-1" type={"checkbox"} className=' w-4 h-4 text-green-600 bg-white border-gray-300 rounded'/>
-                                          <label for='checkbox-table-search-1'>checkbox</label>
+                                        <div><input id="checkbox-table-search-1" type={"checkbox"} className=' w-4 h-4 text-green-600 bg-white border-gray-300 rounded'/>  
                                         </div>
                                     </td>
                                     <td>Gross Margin Rate (%)</td>
@@ -126,7 +138,7 @@ export default function Metrics(){
                                 <tr>
                                     <td>
                                         <div><input id="checkbox-table-search-1" type={"checkbox"} className=' w-4 h-4 text-green-600 bg-white border-gray-300 rounded'/>
-                                          <label for='checkbox-table-search-1'>checkbox</label>
+                                        
                                         </div>
                                     </td>
                                     <td>GM without provision</td>
@@ -139,7 +151,7 @@ export default function Metrics(){
                                 <tr>
                                     <td>
                                         <div><input id="checkbox-table-search-1" type={"checkbox"} className=' w-4 h-4 text-green-600 bg-white border-gray-300 rounded'/>
-                                          <label for='checkbox-table-search-1'>checkbox</label>
+                                         
                                         </div>
                                     </td>
                                     <td>GM after provision</td>
@@ -152,7 +164,7 @@ export default function Metrics(){
                                 <tr>
                                     <td>
                                         <div><input id="checkbox-table-search-1" type={"checkbox"} className=' w-4 h-4 text-green-600 bg-white border-gray-300 rounded'/>
-                                          <label for='checkbox-table-search-1'>checkbox</label>
+                                          
                                         </div>
                                     </td>
                                     <td>Stock Provision</td>
@@ -165,7 +177,6 @@ export default function Metrics(){
                                 <tr>
                                     <td>
                                         <div><input id="checkbox-table-search-1" type={"checkbox"} className=' w-4 h-4 text-green-600 bg-white border-gray-300 rounded'/>
-                                          <label for='checkbox-table-search-1'>checkbox</label>
                                         </div>
                                     </td>
                                     <td> Transaction Margin </td>
@@ -194,7 +205,7 @@ export default function Metrics(){
                     <div className="flex justify-between">
                         <div className=" text-lg font-semibold"> Break down by Dimensions</div>
                         <div>view by</div>
-                        <label className="text-sm font-light">SUB</label>
+                        
                         <Dropdown
                         value={selectedSUB}
                         onChange={(e) => setSelectedSUB(e.value)}
@@ -212,7 +223,6 @@ export default function Metrics(){
                     <div className="flex justify-between">
                         <div className=" text-lg font-semibold"> Cross Dimension Analysis</div>
                         <div>view by</div>
-                        <label className="text-sm font-light">SUB</label>
                         <Dropdown
                         value={selectedSUB}
                         onChange={(e) => setSelectedSUB(e.value)}
@@ -220,9 +230,7 @@ export default function Metrics(){
                         optionLabel="name"
                         placeholder="SUB"
                         className="w-22 md:w-12rem text-sm h-7 items-center"/>
-                        </div>
                         <div>view by</div>
-                        <label className="text-sm font-light">Compare With</label>
                         <Dropdown
                         value={selectedRegion}
                         onChange={(e) => setSelectedRegion(e.value)}
@@ -231,6 +239,7 @@ export default function Metrics(){
                         placeholder="Region"
                         className="w-22 md:w-12rem text-sm h-7 items-center"/>
                         </div>
+                        
                         <div>   
                         <table className="w-full text-sm">
                             <thead>
@@ -250,7 +259,7 @@ export default function Metrics(){
                                 <tr>
                                     <td>
                                         <div><input id="checkbox-table-search-1" type={"checkbox"} className=' w-4 h-4 text-green-600 bg-white border-gray-300 rounded'/>
-                                          <label for='checkbox-table-search-1'>checkbox</label>
+                                        
                                         </div>
                                     </td>
                                     <td> + Cloud </td>
@@ -263,7 +272,7 @@ export default function Metrics(){
                                 <tr>
                                     <td>
                                         <div><input id="checkbox-table-search-1" type={"checkbox"} className=' w-4 h-4 text-green-600 bg-white border-gray-300 rounded'/>
-                                          <label for='checkbox-table-search-1'>checkbox</label>
+                                        
                                         </div>
                                     </td>
                                     <td> + L&S </td>
@@ -276,7 +285,7 @@ export default function Metrics(){
                                 <tr>
                                     <td>
                                         <div><input id="checkbox-table-search-1" type={"checkbox"} className=' w-4 h-4 text-green-600 bg-white border-gray-300 rounded'/>
-                                          <label for='checkbox-table-search-1'>checkbox</label>
+                                        
                                         </div>
                                     </td>
                                     <td> + Software</td>
@@ -289,7 +298,7 @@ export default function Metrics(){
                                 <tr>
                                     <td>
                                         <div><input id="checkbox-table-search-1" type={"checkbox"} className=' w-4 h-4 text-green-600 bg-white border-gray-300 rounded'/>
-                                          <label for='checkbox-table-search-1'>checkbox</label>
+                                        
                                         </div>
                                     </td>
                                     <td> + Security </td>
@@ -302,7 +311,7 @@ export default function Metrics(){
                                 <tr>
                                     <td>
                                         <div><input id="checkbox-table-search-1" type={"checkbox"} className=' w-4 h-4 text-green-600 bg-white border-gray-300 rounded'/>
-                                          <label for='checkbox-table-search-1'>checkbox</label>
+                                        
                                         </div>
                                     </td>
                                     <td> + ESS</td>
@@ -315,7 +324,7 @@ export default function Metrics(){
                                 <tr>
                                     <td>
                                         <div><input id="checkbox-table-search-1" type={"checkbox"} className=' w-4 h-4 text-green-600 bg-white border-gray-300 rounded'/>
-                                          <label for='checkbox-table-search-1'>checkbox</label>
+                                        
                                         </div>
                                     </td>
                                     <td> + Networking </td>
@@ -328,6 +337,8 @@ export default function Metrics(){
                             </tbody>
                         </table>
                         </div>
+                        </div>
+                        
                 </div>
             </div>
     )
