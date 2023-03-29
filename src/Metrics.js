@@ -4,7 +4,7 @@ import { Button } from "primereact/button";
 import { Dropdown } from "primereact/dropdown";
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
-import { ProductShop } from "./ProductShop";
+import { ProductServicE } from "./ProductServicE";
 
 
 export default function Matrics(){
@@ -78,7 +78,7 @@ export default function Matrics(){
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        ProductShop.getProductsMini().then(data => setProducts(data));
+        ProductServicE.getProductsMini().then(data => setProducts(data));
     }, []);
     return(
         <div>

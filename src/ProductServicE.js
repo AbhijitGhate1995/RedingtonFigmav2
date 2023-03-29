@@ -1,4 +1,4 @@
- export const ProductShop={
+ export const ProductServicE={
     getProductsData(){
         return[
             {
