@@ -76,9 +76,10 @@ export default function Matrics(){
           ]
     };
     const [products, setProducts] = useState([]);
+
     useEffect(() => {
-      ProductShop.then(data => setProducts(data));
-  }, []);
+        ProductShop.getProductsMini().then(data => setProducts(data));
+    }, []);
     return(
         <div>
             <div className="mt-10 flex-row grid 2xl:grid-cols-2 xl:grid-cols-2 lg:grid-cols-2 sm:grid-cols-1 gap-4 mb-10">
@@ -87,7 +88,7 @@ export default function Matrics(){
                         <div className=" font-semibold text-lg">Metrics</div>
                     </div>
                     <div className="relative overflow-x-auto sm:rounded-lg p-1">
-                      <DataTable value={products}>
+                      <DataTable value={products} tableStyle={{ minWidth: '50rem' }}>
                         <Column field="metrics" header='Matrics' sortable style={{width: '25%'}}></Column>
                         <Column field="target" header='Target' sortable style={{width: '25%'}}></Column>
                         <Column field="achievement " header='Achievement' sortable style={{width: '25%'}}></Column>
