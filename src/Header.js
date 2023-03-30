@@ -501,6 +501,7 @@ function Header() {
       ],
     },
   ];
+  
 
   return (
     <div className="bg-slate-100 ">
@@ -513,7 +514,6 @@ function Header() {
               <div className="justify-between h-[500px] flex-col ">
                 <div className="flex">
                   <img src="../assest/img/Redington (India) 1.png" />
-                  {/* <img src='../assest/img/' /> */}
                 </div>
                 <div className="text-white">
                   <li>
@@ -621,11 +621,8 @@ function Header() {
                               <h6 class="text-[white]">View Performance</h6>
                             </div>
                             <div>
-                              <a
-                                class="text-2xl"
-                                href="/"
-                              >
-                              X
+                              <a class="text-2xl" href="/">
+                                X
                               </a>
                             </div>
                           </div>
@@ -703,6 +700,13 @@ function Header() {
                               className=" md:w-12rem text-sm pt-0 w-1/2"
                             />
                           </div>
+                        </div>
+                        <div className=" bg-green-300 h-12 rounded-md mt-14" >
+                            <div className=" p-1 text-end">
+                              <button className=" bg-white text-black justify-end text-center px-1 py-1 rounded-md m-1" ><a href="/ " >Cancel</a> </button>
+                              <button className=" bg-white text-black justify-end text-center px-1 py-1 rounded-md m-1 "> Filter</button>
+                            </div>
+                           
                         </div>
                       </div>
                     </Sidebar>
@@ -852,14 +856,18 @@ function Header() {
                       </div>
                       <div className="grid">
                         <ReactECharts option={upsideBar} />
-                        </div>
+                      </div>
                       <div className=" bg-slate-900 h-7 w-auto">
                         <div className=" text-right ">
-                        <a className=" bg-white border-2 text-black text-xs border-gray-700 rounded-md px-1 py-1" href="/"> Cancel </a>
+                          <a
+                            className=" bg-white border-2 text-black text-xs border-gray-700 rounded-md px-1 py-1"
+                            href="/"
+                          >
+                            {" "}
+                            Cancel{" "}
+                          </a>
                         </div>
-                            
                       </div>
-                     
                     </Sidebar>
                     <Button
                       onClick={() => setVisible(true)}
