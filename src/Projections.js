@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ReactECharts from "echarts-for-react";
 import { Button } from "primereact/button";
 import { Dropdown } from "primereact/dropdown";
-import { ProductServicE } from "./ProductService";
+import { ProductService } from "./ProductService";
 import { ProductDimension } from "./ProductDimension";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
@@ -99,7 +99,7 @@ function Projections() {
     ProductDimension.getProductsMini().then((data) => setProduct(data));
   }, []);
   useEffect(() => {
-    ProductServicE.getProductsMini().then((data) => setProducts(data));
+    ProductService.getProductsMini().then((data) => setProducts(data));
   }, []);
 
   return (

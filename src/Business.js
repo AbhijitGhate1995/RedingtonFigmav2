@@ -7,7 +7,7 @@ import { ProductDimension } from "./ProductDimension";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
 
-export default function Buisness() {
+export default function Business() {
     const [selectedSUB, setSelectedSUB] = useState(null);
     const SUB = [
         { name: "SBU", code: "All" },

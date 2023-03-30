@@ -8,7 +8,10 @@ import { Badge } from 'primereact/badge';
 import ReactECharts from 'echarts-for-react';
 import { Menu } from 'primereact/menu';
 
+
 function Header() {
+
+
     const [visible, setVisible] = useState(false);
     const [filter, setFilter] = useState(false);
     const [selectedCity, setSelectedCity] = useState(null);
@@ -489,23 +492,29 @@ function Header() {
             items: [
                 {
                     label: 'Metrics',
+                    url:'/header/matrics'
+                
                 },
                 {
                     label: 'Business',
+                    url:'/header/business'
                 },{
                    label: 'Comparison',
-                    url: 'https://reactjs.org/'
+                    url: '/header/comparison'
                 },
                 {
                     label: 'Detailed',
-                    url: 'https:localhost:3000/'
+                    url: '/header/main'
                 },
                 {
                     label: 'Projections',
+                    url: '/header/projections'
                    
-                }
+                },
+              
             ]
-        },
+           
+        }
     ];
 
     return (
@@ -514,7 +523,7 @@ function Header() {
                 <nav class={`grid w-16 flex-none bg-green-900 rounded-r-xl px-2 py-3 mt-1 mb-1 h-screen hover:w-44 group-hover:shadow-xl duration-500 z-10 fixed group-hover:visible delay-150 `}>
                     <div>
                         <ul>
-                            <div className='justify-between h-[500px] flex-col justify-between '>
+                            <div className='justify-between h-[500px] flex-col '>
                                 <div className='flex'>
                                     <img src='../assest/img/Redington (India) 1.png' />
                                     {/* <img src='../assest/img/' /> */}

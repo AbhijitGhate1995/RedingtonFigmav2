@@ -4,6 +4,7 @@ import { Sidebar } from 'primereact/sidebar';
 import { Button } from 'primereact/button';
 import { Dropdown } from 'primereact/dropdown';
 import ReactECharts from 'echarts-for-react';
+import {Link} from 'react-router-dom';
 
 function Content() {
     const [filter, setFilter] = useState(false);
@@ -164,10 +165,10 @@ function Content() {
                                     <a href="#" class=" py-2 pl-3 pr-4  rounded md:bg-transparent  md:p-0 dark:text-white" >Metrics</a>
                                 </li>
                                 <li>
-                                    <a href="#" class="py-2 pl-3 pr-4  rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Business</a>
+                                    <a href="#" class="py-2 pl-3 pr-4  rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"><Link to='/content/buisness'></Link>Buisness</a>
                                 </li>
                                 <li>
-                                    <a href="#" class="py-2 pl-3 pr-4  rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Comparision</a>
+                                    <a href="#" class="py-2 pl-3 pr-4  rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"><Link to='/content/comparison'></Link>Comparison</a>
                                 </li>
                                 <li>
                                     <a href="#" class="py-2 pl-3 pr-4  rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Detailed</a>
