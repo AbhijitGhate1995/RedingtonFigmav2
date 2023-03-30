@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useState } from 'react';
 import { Sidebar } from 'primereact/sidebar';
 import { Dropdown } from 'primereact/dropdown';
@@ -6,6 +6,7 @@ import { Button } from 'primereact/button';
 import { SplitButton } from 'primereact/splitbutton';
 import { Badge } from 'primereact/badge';
 import ReactECharts from 'echarts-for-react';
+import { Menu } from 'primereact/menu';
 
 function Header() {
     const [visible, setVisible] = useState(false);
@@ -115,11 +116,6 @@ function Header() {
         { name: "2021-22", code: "2021-22" },
     ];
 
-
-
-
-
-
     const items = [
         {
             icon: 'pi pi-user',
@@ -171,7 +167,6 @@ function Header() {
         ]
     };
     const Bar = {
-
         tile: {
             Text: 'Revenue Trend'
         },
@@ -184,7 +179,6 @@ function Header() {
             type: 'category',
             data: ['FY 19-20', 'FY 20-21', 'FY 21-22', 'FY 22-23']
         },
-
         yAxis: {
             type: 'value'
         },
@@ -193,9 +187,7 @@ function Header() {
             top: "40",
             bottom: "8"
         },
-
         series: [
-
             {
                 itemStyle: { normal: { color: '#526652' } },
                 name: 'Revenue',
@@ -210,7 +202,6 @@ function Header() {
                 type: 'line',
             }
         ]
-
     };
     const Circle2 = {
         tooltip: {
@@ -250,10 +241,8 @@ function Header() {
                 ]
             }
         ]
-
     };
     const Bar2 = {
-
         tile: {
             Text: 'Margin Trend'
         },
@@ -267,7 +256,6 @@ function Header() {
             type: 'category',
             data: ['FY 19-20', 'FY 20-21', 'FY 21-22', 'FY 22-23']
         },
-
         yAxis: {
             type: 'value'
         },
@@ -276,9 +264,7 @@ function Header() {
             top: "20",
             bottom: "8"
         },
-
         series: [
-
             {
                 itemStyle: { normal: { color: '#526652' } },
                 name: 'Margin',
@@ -293,7 +279,6 @@ function Header() {
                 type: 'line',
             }
         ]
-
     };
     const circle3 = {
         tooltip: {
@@ -329,14 +314,11 @@ function Header() {
                 data: [
                     { value: 70, name: "70%", itemStyle: { color: '#029046' } },
                     { value: 30, itemStyle: { color: '#E4E7EC' }, },
-
                 ]
             }
         ]
-
     };
     const Bar3 = {
-
         tile: {
             Text: 'Profitability Trend'
         },
@@ -349,7 +331,6 @@ function Header() {
             type: 'category',
             data: ['FY 19-20', 'FY 20-21', 'FY 21-22', 'FY 22-23']
         },
-
         yAxis: {
             type: 'value'
         },
@@ -358,9 +339,7 @@ function Header() {
             top: "40",
             bottom: "8"
         },
-
         series: [
-
             {
                 itemStyle: { normal: { color: '#526652' } },
                 name: 'Revenue',
@@ -375,10 +354,8 @@ function Header() {
                 type: 'line',
             }
         ]
-
     };
     const horizontal4 = {
-
         tooltip: {
             trigger: 'axis',
             axisPointer: {
@@ -389,25 +366,21 @@ function Header() {
         legend: {
             top: '1%',
             left: 'right',
-
         },
         grid: {
             left: '23%',
             right: '2%',
             bottom: '3%',
             top: '7%',
-
         },
         xAxis: {
             type: 'value',
-
         },
         yAxis: {
             type: 'category',
             data: ['Opening', 'Average', 'Closing']
         },
         series: [
-
             {
                 itemStyle: { normal: { color: '#526652' } },
                 type: 'bar',
@@ -418,7 +391,6 @@ function Header() {
                 data: [2900, 3800, 3300, 2100],
                 type: 'bar',
                 backgroundColor: ['var(--green-900)']
-
             },
             {
                 name: 'Trend Line',
@@ -426,8 +398,6 @@ function Header() {
                 type: 'line'
             }
         ]
-
-
     };
     const Circle4 = {
         tooltip: {
@@ -469,6 +439,7 @@ function Header() {
         ]
 
     };
+
     const SimpleBar = {
         xAxis: {
             type: "category",
@@ -477,7 +448,6 @@ function Header() {
         yAxis: {
             type: "value",
         },
-
         series: [
             {
                 itemStyle: { normal: { color: "#029046" } },
@@ -512,20 +482,43 @@ function Header() {
             },
         ],
     };
+    const menu = useRef(null);
+    const revenuelist = [
+        {
+            label: 'Options',
+            items: [
+                {
+                    label: 'Metrics',
+                },
+                {
+                    label: 'Business',
+                },{
+                   label: 'Comparison',
+                    url: 'https://reactjs.org/'
+                },
+                {
+                    label: 'Detailed',
+                    url: 'https:localhost:3000/'
+                },
+                {
+                    label: 'Projections',
+                   
+                }
+            ]
+        },
+    ];
 
     return (
         <div className='bg-slate-100 '>
             <div class="min-h-screen flex">
                 <nav class={`grid w-16 flex-none bg-green-900 rounded-r-xl px-2 py-3 mt-1 mb-1 h-screen hover:w-44 group-hover:shadow-xl duration-500 z-10 fixed group-hover:visible delay-150 `}>
                     <div>
-
                         <ul>
                             <div className='justify-between h-[500px] flex-col justify-between '>
                                 <div className='flex'>
                                     <img src='../assest/img/Redington (India) 1.png' />
                                     {/* <img src='../assest/img/' /> */}
-                                </div>
-
+                               </div>
                                 <div className='text-white'>
                                     <li>
                                         <button className=' p-3 flex mt-7 px-2 hover:bg-green-500 hover:w-40  cursor-pointer text-white rounded-md'>
@@ -533,7 +526,6 @@ function Header() {
                                             <div className='text-white opacity-0 hover:opacity-100'>Home</div>
                                         </button>
                                     </li>
-
                                     <div className='flex mt-4 px-1 cursor-pointer text-white btn btn-bg-gray-900'>
                                         <li>
                                             <button className='w-10 flex absolute  hover:bg-green-500 p-3 rounded-md px-1 hover:w-40 text-invisible '>
@@ -544,7 +536,6 @@ function Header() {
                                     </div>
                                 </div>
                             </div>
-
                             <div className='sidebar-footer text-white'>
                                 <li>
                                     <button className='flex hover:bg-green-500 p-3 rounded-md  hover:w-40'>
@@ -562,7 +553,6 @@ function Header() {
                         </ul>
                     </div>
                 </nav>
-
                 <main class="flex-1 min-w-0  ml-20 mt-1 p-2 z-0">
                     <header class=" p-0 w-full h-28">
                         <div className='flex items-center justify-between px-5'>
@@ -581,14 +571,11 @@ function Header() {
                                         <div className='flex'><img src='../assest/img/Ellipse 1.png' className='w-auto' />
                                             <img src='../assest/img/Frame 36835.png' className='w-auto m-2' /></div>
                                         <SplitButton model={items} severity="secondary" className=' ' text>
-
                                         </SplitButton>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        
                         <div className='w-full p-4'>
                             <div className='grid grid-cols-2 justify-between'>
                                 <div className='flex gap-5'>
@@ -610,10 +597,8 @@ function Header() {
                                                                     placeholder="--Select Year --"
                                                                     className="w-full md:w-12rem text-sm pt-0"
                                                                 />
-                                                            </div>
-
-
-                                                            <div className=" grid ">
+                                                           </div>
+                                                           <div className=" grid ">
                                                                 <label className="text-sm font-medium">SUB</label>
                                                                 <Dropdown
                                                                     value={selectedSUB}
@@ -637,9 +622,7 @@ function Header() {
                                                                     className="w-full md:w-12rem text-sm pt-0"
                                                                 />
                                                             </div>
-
-
-                                                            <div className=" grid mt-5 mb-5">
+                                                           <div className=" grid mt-5 mb-5">
                                                                 <label className="text-sm font-medium">Vendor</label>
                                                                 <Dropdown
                                                                     value={selectedVendor}
@@ -811,8 +794,7 @@ function Header() {
                                         <Button
                                             onClick={() => setVisible(true)}
                                             severity="secondary"
-                                            className="bg-surface-900 h-8 w-auto"
-                                        >
+                                            className="bg-surface-900 h-8 w-auto">
                                             View Performance
                                         </Button>
                                     </div>
@@ -840,7 +822,6 @@ function Header() {
                                             <h1 className="text- font-[500] text-[#262D29]">26% </h1>
                                         </div>
                                         <img src='Rect.png' className='pt-3 h-8' />
-
                                         <div className='ml-2'><h2 className="text-[12px] font-normal text-[#344054] text-center">3 Yr CAGR</h2>
                                             <h1 className="text- font-[500] text-[#262D29]">12%</h1>
                                         </div>
@@ -857,11 +838,9 @@ function Header() {
                                     <div className='bg-white rounded-md flex  flex-row place-content-center space-x-4 pb-2 pt-1'>
                                         <div className='ml-2'><h2 className="text-[12px] font-normal text-[#344054] text-center">LY Value</h2>
                                             <h1 className="text- font-[500] text-[#262D29]" >&#8377;54.40 Cr</h1>
-
                                         </div><img src='Rect.png' className='pt-3 h-8' />
                                         <div className='ml-2'><h2 className="text-[12px] font-normal text-[#344054] text-center">LY Var% </h2>
                                             <h1 className="text- font-[500] text-[#262D29]">11%</h1>
-
                                         </div><img src='Rect.png' className='pt-3 h-8' />
                                         <div className='ml-2'><h2 className="text-[12px] font-normal text-[#334056] text-center">3 Yr CAGR</h2>
                                             <h1 className="text- font-[500] text-[#262D29]">12% </h1>
@@ -881,11 +860,9 @@ function Header() {
                                     <div className='bg-white rounded-md flex  flex-row place-content-center space-x-4 pb-2 pt-1'>
                                         <div className='ml-2'><h2 className="text-[12px] font-normal text-[#344054] text-center">LY Value</h2>
                                             <h1 className="text- font-[500] text-[#262D29]">&#8377;10.76 Cr</h1>
-
                                         </div><img src='Rect.png' className='pt-3 h-8' />
                                         <div className='ml-2'><h2 className="text-[12px] font-normal text-[#344054] text-center">LY Var% </h2>
                                             <h1 className="text- font-[500] text-[#262D29]">20%</h1>
-
                                         </div><img src='Rect.png' className='pt-3 h-8' />
                                         <div className='ml-2'><h2 className="text-[12px] font-normal text-[#344054] text-center">3 Yr CAGR</h2>
                                             <h1 className="text- font-[500] text-[#262D29]">20% </h1>
@@ -897,35 +874,31 @@ function Header() {
                                 <div className='shadow border rounded-md' >
                                     <div className='hover:bg-slate-200 flex items-center pl-7 h-12 p-9 space-x-4 bg-[#EDF2F0]'>
                                         <img src='Rs.png' className='w-11 pt-8 pb-7 ' /> <div><h2 className='pb-1'>WC Intrest</h2>
-
                                             <h1 className='text-xl font-medium' ><b> &#8377;-1.81 Cr</b></h1></div>
                                     </div>
                                     <div className='bg-white rounded-md flex  flex-row place-content-center space-x-4 pb-2 pt-1'>
                                         <div className='ml-2'><h2 className="text-[12px] font-normal text-[#344054] text-center">LY Value</h2>
                                             <h1 className="text- font-[500] text-[#262D29]">&#8377;19.63 Cr</h1>
-
                                         </div><img src='Rect.png' className='pt-3 h-8' />
                                         <div className='ml-2'><h2 className="text-[12px] font-normal text-[#344054] text-center">LY Var% </h2>
                                             <h1 className="text- font-[500] text-[#ff3e3e]">-109%</h1>
-
                                         </div><img src='Rect.png' className='pt-3 h-8' />
                                         <div className='ml-2'><h2 className="text-[12px] font-normal text-[#344054] text-center">3 Yr CAGR</h2>
                                             <h1 className="text- font-[500] text-[#ff3e3e]">-131% </h1>
-
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
-
                         </div>
-
                         <div className=" mt-3 grid flex-row gap-3 2xl:grid-cols-2 xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1">
                             <div className="bg-white py-3 rounded-xl border  border-[#E1E6E3] px-4">
                                 <div className="flex justify-between mb-4">
                                     <span className="font-semibold">Revenue</span>
-                                    <i className="pi pi-ellipsis-v pt-1" />
-
+                                    {/* <i className="pi pi-ellipsis-v pt-1" /> */}
+                                    <div className="card flex justify-content-center text-black">
+                                        <Menu model={revenuelist} popup ref={menu} />
+                                        <Button icon="pi pi-ellipsis-v" style={{width:10, height:10}} severity="secondary" onClick={(e) => menu.current.toggle(e)} text/>
+                                    </div>
                                 </div>
                                 <div className="flex gap-2 mb-3 justify-evenly">
                                     <div className="p-3 border border-[#E1E6E3] rounded-[5px] grow"><p className="text-[12px] font-normal text-[#344054]">Gross Sale</p>
@@ -946,14 +919,11 @@ function Header() {
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
-
                                 <div className="grid flex-row gap-2 mb-2 2xl:grid-cols-8 xl:grid-cols-8 lg:grid-cols-8 md:grid-cols-8 sm:grid-cols-1">
                                     <div className="col-span-3">
                                         <div className="bg-[#F9FAFB] rounded-md h-36 w-42 p-2">
                                             <p className="text-[16px] font-semibold text-[#344054] text-center">Target vs. Actual</p>
-
                                             <div>
                                                 <ReactECharts style={{ height: "100px", width: "140px" }} option={Circle}></ReactECharts>
                                             </div>
@@ -961,21 +931,21 @@ function Header() {
                                     </div>
                                     <div className="col-span-3">
                                         <div className="bg-[#F9FAFB] rounded-md p-2 h-36 w-72">
-
                                             <p className="text-[13px] font-semibold text-[#344054]">Revenue Trend</p>
                                             <div >
                                                 <ReactECharts style={{ height: "111px", width: "270px" }} option={Bar}></ReactECharts>
                                             </div>
                                         </div>
-                                    </div>
-
+                                   </div>
                                 </div>
                             </div>
                             <div className="bg-white py-3 rounded-xl border  border-[#E1E6E3] px-4">
                                 <div className="flex justify-between mb-4">
                                     <span className="font-semibold">Margin</span>
-                                    <i className="pi pi-ellipsis-v pt-1" />
-
+                                    <div className="card flex justify-content-center text-black">
+                                        <Menu model={revenuelist} popup ref={menu} />
+                                        <Button icon="pi pi-ellipsis-v" style={{width:10, height:10}} severity="secondary" onClick={(e) => menu.current.toggle(e)} text/>
+                                    </div>
                                 </div>
                                 <div className="flex gap-2 mb-3 justify-evenly">
                                     <div className="p-3 border border-[#E1E6E3] rounded-[5px] grow"><p className="text-[12px] font-normal text-[#344054]">GM before Provision</p>
@@ -996,14 +966,11 @@ function Header() {
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
-
-                                <div className="grid flex-row gap-2 mb-2 2xl:grid-cols-8 xl:grid-cols-8 lg:grid-cols-8 md:grid-cols-8 sm:grid-cols-1">
+                               <div className="grid flex-row gap-2 mb-2 2xl:grid-cols-8 xl:grid-cols-8 lg:grid-cols-8 md:grid-cols-8 sm:grid-cols-1">
                                     <div className="col-span-3">
                                         <div className="bg-[#F9FAFB] rounded-md h-36 w-42 p-2">
                                             <p className="text-[16px] font-semibold text-[#344054] text-center">Target vs. Actual</p>
-
                                             <div>
                                                 <ReactECharts style={{ height: "100px", width: "140px" }} option={Circle2}></ReactECharts>
                                             </div>
@@ -1012,21 +979,20 @@ function Header() {
                                     <div className="col-span-3">
                                         <div className="bg-[#F9FAFB] rounded-md p-2 h-36 w-72">
                                             <p className="text-[13px] font-semibold text-[#344054]">Margin Trend</p>
-
                                             <div>
-
                                                 <ReactECharts style={{ height: "111px", width: "270px" }} option={Bar2}></ReactECharts>
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                             <div className="bg-white py-3 rounded-xl border  border-[#E1E6E3] px-4">
                                 <div className="flex justify-between mb-4">
                                     <span className="font-semibold">Cost/Expence</span>
-                                    <i className="pi pi-ellipsis-v pt-1" />
-
+                                    <div className="card flex justify-content-center text-black">
+                                        <Menu model={revenuelist} popup ref={menu} />
+                                        <Button icon="pi pi-ellipsis-v" style={{width:10, height:10}} severity="secondary" onClick={(e) => menu.current.toggle(e)} text/>
+                                    </div>
                                 </div>
                                 <div className="flex gap-2 mb-3 justify-evenly">
                                     <div className="p-3 border border-[#E1E6E3] rounded-[5px] grow"><p className="text-[12px] font-normal text-[#344054]">Expence</p>
@@ -1047,9 +1013,7 @@ function Header() {
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
-
                                 <div className="grid flex-row gap-2 mb-2 2xl:grid-cols-8 xl:grid-cols-8 lg:grid-cols-8 md:grid-cols-8 sm:grid-cols-1">
                                     <div className="col-span-3">
                                         <div className="bg-[#F9FAFB] rounded-md h-36 w-42 p-2">
@@ -1069,15 +1033,15 @@ function Header() {
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
-
                             </div>
                             <div className="bg-white py-3 rounded-xl border  border-[#E1E6E3] px-4">
                                 <div className="flex justify-between mb-4">
                                     <span className="font-semibold">Income</span>
-                                    <i className="pi pi-ellipsis-v pt-1" />
-
+                                    <div className="card flex justify-content-center text-black">
+                                        <Menu model={revenuelist} popup ref={menu} />
+                                        <Button icon="pi pi-ellipsis-v" style={{width:10, height:10}} severity="secondary" onClick={(e) => menu.current.toggle(e)} text/>
+                                    </div>
                                 </div>
                                 <div className="flex gap-2 mb-3 justify-evenly">
                                     <div className="p-3 w-2.4/12 border border-[#E1E6E3] rounded-[5px] grow"><p className="text-[12px] font-normal text-[#344054]">EBIT</p>
@@ -1110,18 +1074,13 @@ function Header() {
                                             </div>
                                         </div>
                                     </div>
-
-
                                 </div>
-
                                 <div className="grid flex-row gap-2 mb-2 2xl:grid-cols-8 xl:grid-cols-8 lg:grid-cols-8 md:grid-cols-8 sm:grid-cols-1">
                                     <div className="col-span-3">
                                         <div className="bg-[#F9FAFB] rounded-md h-36 w-42 p-2">
                                             <p className="text-[16px] font-semibold text-[#344054] text-center">Target vs. Actual</p>
-
                                             <div>
                                                 <ReactECharts style={{ height: "120px", width: "140px" }} option={Circle4}></ReactECharts>
-
                                             </div>
                                         </div>
                                     </div>
@@ -1131,24 +1090,13 @@ function Header() {
 
                                             <div>
                                                 <ReactECharts style={{ height: "110px", width: "270px" }} option={horizontal4}></ReactECharts>
-
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
-
-
-                            <div>Rohan malavi </div>
-
-                        </div>
-
-
+                      </div>
                     </div>
-
-
-
                 </main>
             </div>
         </div>

@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import ReactECharts from "echarts-for-react";
-import { Button } from "primereact/button";
 import { Dropdown } from "primereact/dropdown";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
-import { ProductService } from "./ProductService";
 import {ProdShop} from "./ProdShop";
 import { ProductDimension } from "./ProductDimension";
 
@@ -23,35 +21,66 @@ export default function Matrics() {
     { name: "LP", code: "All" },
     { name: "LY", code: "All" },
   ];
-
   const linechart1 = {
     xAxis: {
-      type: "category",
-      data: ["Q1", "Q2", "Q3", "Q4", "Q1", "Q2", "Q3"],
-      boundaryGap: false,
+        type: 'category',
+        splitLine: {
+            show: false
+        },
+    },
+    grid: {
+        height: "85%",
+        top: '8%',
+        right: '5%',
+        left: '10%',
+        bottom: '70%',
+        containLabel: false,
+        borderRadius: 15
     },
     yAxis: {
-      type: "value",
-    },
-
-    series: [
-      {
-        data: [200, 30, 50, 96, 60, 76, 221],
-        type: 'line',
-        layout: 'none',
-        coordinateSystem: 'cartesian2d',
-        edgeSymbol: ['circle', 'arrow'],
-        edgeSymbolSize: [4, 10],
-        symbolSize: 20,
-        label: {
-          show: true,
-          position: "top",
-          // backgroundColor: '#6a7985',
-          // color:'#FFFFFF',
+        type: 'value',
+        splitLine: {
+            show: true,
+            lineStyle: {
+                type: 'dashed'
+            }
         },
-      },
-    ],
-  };
+               // min: 0,
+        // max: 110000000000,
+        // interval: 50,
+    },
+    series: [
+        {
+          data: [200, 30, 50, 96, 60, 76, 221],
+            type: 'line',
+            symbol: 'circle',
+            symbolSize: 30,
+            label: {
+                show: true,
+                fontSize: 7,
+                position: ['22%', '30%'],
+                color: '#fff',
+              },
+            lineStyle: {
+                color: '#526652',
+                width: 2,
+                type: 'line'
+            },
+            itemStyle: {
+
+                color: '#526652',
+                borderWidth: 2,
+                borderColor: '#526652',
+                shadowBlur: 4,
+                shadowColor: "rgba(0, 0, 0, 0.25)"
+
+            }
+
+
+        }
+    ]
+};
+  
   const horizontalChart2 = {
     tooltip: {
       trigger: "axis",
