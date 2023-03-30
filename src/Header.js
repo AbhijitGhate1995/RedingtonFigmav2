@@ -852,11 +852,12 @@ function Header() {
                       </div>
                       <div className="grid">
                         <ReactECharts option={upsideBar} />
-                        <div className=" bg-slate-900 fixed ">
-                        <Button className="flex justify-end gap-3">
-                            <a className=" bg-white text-xs border-gray-800 rounded-md px-4 py-2" href="/"> Cancel </a>
-                        </Button>
-                      </div>
+                        </div>
+                      <div className=" bg-slate-900 h-7 w-auto">
+                        <div className=" text-right ">
+                        <a className=" bg-white border-2 text-black text-xs border-gray-700 rounded-md px-1 py-1" href="/"> Cancel </a>
+                        </div>
+                            
                       </div>
                      
                     </Sidebar>
