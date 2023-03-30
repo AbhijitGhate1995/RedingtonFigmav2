@@ -501,7 +501,6 @@ function Header() {
       ],
     },
   ];
-  
 
   return (
     <div className="bg-slate-100 ">
@@ -701,12 +700,16 @@ function Header() {
                             />
                           </div>
                         </div>
-                        <div className=" bg-green-300 h-12 rounded-md mt-14" >
-                            <div className=" p-1 text-end">
-                              <button className=" bg-white text-black justify-end text-center px-1 py-1 rounded-md m-1" ><a href="/ " >Cancel</a> </button>
-                              <button className=" bg-white text-black justify-end text-center px-1 py-1 rounded-md m-1 "> Filter</button>
-                            </div>
-                           
+                        <div className=" bg-green-300 h-12 rounded-md mt-14">
+                          <div className=" p-1 text-end">
+                            <button className=" bg-white text-black justify-end text-center px-1 py-1 rounded-md m-1">
+                              <a href="/ ">Cancel</a>{" "}
+                            </button>
+                            <button className=" bg-white text-black justify-end text-center px-1 py-1 rounded-md m-1 ">
+                              {" "}
+                              Filter
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </Sidebar>
@@ -857,15 +860,17 @@ function Header() {
                       <div className="grid">
                         <ReactECharts option={upsideBar} />
                       </div>
-                      <div className=" bg-slate-900 h-7 w-auto">
-                        <div className=" text-right ">
-                          <a
-                            className=" bg-white border-2 text-black text-xs border-gray-700 rounded-md px-1 py-1"
-                            href="/"
-                          >
-                            {" "}
-                            Cancel{" "}
-                          </a>
+                      <div className=" bg-slate-900 h-11 rounded-md w-auto">
+                        <div className=" text-right">
+                          <div className="p-2">
+                            <a
+                              className=" bg-white border-2 text-black text-xs border-gray-700 rounded-md px-1 py-1"
+                              href="/"
+                            >
+                              {" "}
+                              Cancel{" "}
+                            </a>
+                          </div>
                         </div>
                       </div>
                     </Sidebar>
