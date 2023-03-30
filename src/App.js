@@ -8,32 +8,31 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Content from './Content';
 import Business from './Business';
 import Projections from './Projections';
+import Detailed from './Detailed';
+import Home from './Home';
+import Figma from './Figma';
 function App() {
   return (
     <div>
-      <BrowserRouter>
-
-        <Routes>
-
-          <Route path="/" element={<Header/>} />
-
-
-          <Route path="/header/matrics" element={<Metrics />} />
-          <Route path="/header/business" element={<Business/> } />
-          <Route path="/header/comparison" element={<Comparison />} />
-         <Route path="/header/main" element={<Main/>} />
-         <Route path="/header/projections" element={<Projections/>} />
-
-
-
-
-
-        </Routes>
-
-
-      </BrowserRouter>
-
-    </div>
+      
+             
+          <BrowserRouter>
+            
+            <Routes>
+              <Route path="/" element={<Header/>}>
+              <Route path='/' element={<Home/>}/>
+              <Route path="/header/matrics" element={<Metrics />} />
+              <Route path="/header/business" element={<Business />} />
+              <Route path="/header/comparison" element={<Comparison />} />
+              <Route path="/header/detailed" element={<Detailed />} />
+              <Route path="/header/projections" element={<Projections />} />
+              </Route>
+            </Routes>
+        
+          </BrowserRouter>
+         
+    
+    </div >
 
 
 
