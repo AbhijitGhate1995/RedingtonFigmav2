@@ -21,11 +21,15 @@ function App() {
             <Routes>
               <Route path="/" element={<Header/>}>
               <Route path='/' element={<Home/>}/>
+
+              <Route path='header/' element={<Content/>}>
               <Route path="/header/matrics" element={<Metrics />} />
               <Route path="/header/business" element={<Business />} />
               <Route path="/header/comparison" element={<Comparison />} />
               <Route path="/header/detailed" element={<Detailed />} />
               <Route path="/header/projections" element={<Projections />} />
+             
+              </Route>
               </Route>
             </Routes>
         

@@ -4,7 +4,7 @@ import { Sidebar } from 'primereact/sidebar';
 import { Button } from 'primereact/button';
 import { Dropdown } from 'primereact/dropdown';
 import ReactECharts from 'echarts-for-react';
-import {Link} from 'react-router-dom';
+import {Link, Outlet} from 'react-router-dom';
 
 function Content() {
     const [filter, setFilter] = useState(false);
@@ -149,7 +149,8 @@ function Content() {
 
 
     return (
-        <div className='w-full m-2 mt-10 sticky top-0'>
+        <div className=''>
+        <div className='w-full m-2 mt-10 sticky top-0 z-0'>
             <div className='flex'>
                
                     <div className='ml-6 w-36'>
@@ -162,19 +163,19 @@ function Content() {
 
                             <ul class="flex flex-col p-4 mt-4 rounded-lg  md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700 ">
                                 <li>
-                                    <a href="#" class=" py-2 pl-3 pr-4  rounded md:bg-transparent  md:p-0 dark:text-white" >Metrics</a>
+                                    <Link to='/header/matrics' class=" py-2 pl-3 pr-4  rounded md:bg-transparent  md:p-0 dark:text-white" >Metrics</Link>
                                 </li>
                                 <li>
-                                    <a href="#" class="py-2 pl-3 pr-4  rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"><Link to='/content/buisness'></Link>Buisness</a>
+                                    <Link to='/header/business' class="py-2 pl-3 pr-4  rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"><Link to='/content/buisness'></Link>Buisness</Link>
                                 </li>
                                 <li>
-                                    <a href="#" class="py-2 pl-3 pr-4  rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"><Link to='/content/comparison'></Link>Comparison</a>
+                                    <Link to='/header/comparison' class="py-2 pl-3 pr-4  rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"><Link to='/content/comparison'></Link>Comparison</Link>
                                 </li>
                                 <li>
-                                    <a href="#" class="py-2 pl-3 pr-4  rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Detailed</a>
+                                    <Link to='/header/detailed' class="py-2 pl-3 pr-4  rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Detailed</Link>
                                 </li>
                                 <li>
-                                    <a href="#" class="py-2 pl-3 pr-4  rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Projections</a>
+                                    <Link to='/header/projections' class="py-2 pl-3 pr-4  rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Projections</Link>
                                 </li>
                             </ul>
 
@@ -212,6 +213,10 @@ function Content() {
                     </div>
                 </div>
             </div>
+        </div>
+        <Outlet>
+
+        </Outlet>
         </div>
     )
 }
