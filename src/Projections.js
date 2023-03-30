@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import ReactECharts from "echarts-for-react";
-import { Button } from "primereact/button";
 import { Dropdown } from "primereact/dropdown";
-import { ProductService } from "./ProductService";
 import { ProductDimension } from "./ProductDimension";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
+import { ProdShop } from "./ProdShop";
 
 function Projections() {
   const [selectedDuration, setSelectedDuration] = useState(null);
@@ -99,7 +98,7 @@ function Projections() {
     ProductDimension.getProductsMini().then((data) => setProduct(data));
   }, []);
   useEffect(() => {
-    ProductService.getProductsMini().then((data) => setProducts(data));
+    ProdShop.getProductsMini().then((data) => setProducts(data));
   }, []);
 
   return (

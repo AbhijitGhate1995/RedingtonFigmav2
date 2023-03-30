@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { Sidebar } from "primereact/sidebar";
 import { Button } from "primereact/button";
 import ReactECharts from "echarts-for-react";
-import { color } from "echarts";
-import { SplitButton } from "primereact/splitbutton";
 import { Dropdown } from "primereact/dropdown";
 
 export default function RedingtonFigma() {
@@ -800,7 +798,7 @@ export default function RedingtonFigma() {
                         respectively.
                       </p>
                     </div>
-                  </div>
+                  </div>  
                   <div>
                     <ReactECharts option={upsideBar} />
                   </div>
