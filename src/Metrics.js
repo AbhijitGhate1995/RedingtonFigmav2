@@ -45,9 +45,6 @@ export default function Matrics() {
                 type: 'dashed'
             }
         },
-               // min: 0,
-        // max: 110000000000,
-        // interval: 50,
     },
     series: [
         {
@@ -57,7 +54,7 @@ export default function Matrics() {
             symbolSize: 30,
             label: {
                 show: true,
-                fontSize: 7,
+                fontSize: 12,
                 position: ['22%', '30%'],
                 color: '#fff',
               },
