@@ -155,8 +155,8 @@ function Content() {
 
 
     return (
-        <div className='sticky'>
-        <div className='w-full m-2 mt-10 sticky top-0 z-0'>
+        <div className=''>
+        <div className='w-full m-2 mt-10 top-0 z-0'>
             <div className='flex'>
                
                     <div className='ml-6 w-36'>

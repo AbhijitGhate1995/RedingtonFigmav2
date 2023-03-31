@@ -443,7 +443,7 @@ function Header() {
    
 
     return (
-        <div className='bg-slate-100 '>
+        <div className='bg-slate-100 sticky fixed'>
             <div class="min-h-screen flex">
                 <nav class={`grid w-16 flex-none bg-green-900 rounded-r-xl px-2 py-3 mt-1 mb-1 h-screen hover:w-44 group-hover:shadow-xl duration-500 z-10 fixed group-hover:visible delay-150 `}>
                     <div>
@@ -488,7 +488,7 @@ function Header() {
                     </div>
                 </nav>
                 <main class="flex-1 min-w-0  ml-20 mt-1 p-2 z-0">
-                    <header class=" p-0 w-full h-15 sticky">
+                    <header class=" p-0 w-full h-15">
                         <div className='flex items-center justify-between px-5'>
                             <div className='object-left'>
                                 <div className='flex lg:flex-1 text-sm'>Dashboard</div>
