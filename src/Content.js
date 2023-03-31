@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { Sidebar } from 'primereact/sidebar';
 import { Button } from 'primereact/button';
 import { Dropdown } from 'primereact/dropdown';
 import ReactECharts from 'echarts-for-react';
-import {Link, Outlet} from 'react-router-dom';
+import {Link, Outlet, useLocation} from 'react-router-dom';
 
 function Content() {
     const [filter, setFilter] = useState(false);
@@ -146,10 +146,16 @@ function Content() {
         ],
     };
 
+    const location = useLocation(); // once ready it returns the 'window.location' object
+    const [url, setUrl] = useState(null);
+    useEffect(() => {
+      setUrl(location.pathname);
+    }, [location]);
+
 
 
     return (
-        <div className=''>
+        <div className='sticky'>
         <div className='w-full m-2 mt-10 sticky top-0 z-0'>
             <div className='flex'>
                
@@ -163,19 +169,19 @@ function Content() {
 
                             <ul class="flex flex-col p-4 mt-4 rounded-lg  md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700 ">
                                 <li>
-                                    <Link to='/header/matrics' class=" py-2 pl-3 pr-4  rounded md:bg-transparent  md:p-0 dark:text-white" >Metrics</Link>
+                                    <Link to='/header/matrics'  className={"text-red-600" + (url === "/header/matrics" ?" active" : "text-black")}  >Metrics</Link>
                                 </li>
                                 <li>
-                                    <Link to='/header/business' class="py-2 pl-3 pr-4  rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"><Link to='/content/buisness'></Link>Buisness</Link>
+                                    <Link to='/header/business' className={"text-red-600" + (url === "/header/business" ?" active" : "text-black")}  >Buisness</Link>
                                 </li>
                                 <li>
-                                    <Link to='/header/comparison' class="py-2 pl-3 pr-4  rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"><Link to='/content/comparison'></Link>Comparison</Link>
+                                    <Link to='/header/comparison' className={"text-red-600" + (url === "/header/comparison" ?" active" : "text-black")} >Comparison</Link>
                                 </li>
                                 <li>
-                                    <Link to='/header/detailed' class="py-2 pl-3 pr-4  rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Detailed</Link>
+                                    <Link to='/header/detailed' className={"text-red-600" + (url === "/header/detailed" ?" active" : "text-black")} >Detailed</Link>
                                 </li>
                                 <li>
-                                    <Link to='/header/projections' class="py-2 pl-3 pr-4  rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Projections</Link>
+                                    <Link to='/header/projections' className={"text-red-600" + (url === "/header/projections" ?" active" : "text-black")} >Projections</Link>
                                 </li>
                             </ul>
 

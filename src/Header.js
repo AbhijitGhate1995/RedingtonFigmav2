@@ -478,7 +478,7 @@ function Header() {
                                     </button>
                                 </li>
                                 <li>
-                                    <button className='w-10 flex p-2 hover:bg-green-500 rounded-md mb-5 hover:w-40'>
+                                    <button className='w-10 flex p-2 hover:bg-green-500 rounded-md ml-1 mb-5 hover:w-40'>
                                         <img src='../assest/img/export.png' width={"25px"} />
                                         <span className='ml-2 visible hover:visible text-white opacity-0 hover:opacity-100'>Logout</span>
                                     </button>
@@ -506,7 +506,7 @@ function Header() {
                                             <img src='../assest/img/Frame 36835.png' className='w-auto m-2' /></div>
                                             <div className="card flex justify-content-center text-black items-center ml-4">
                                                 <Menu model={items} popup ref={menu} />
-                                                <Button icon="pi pi-angle-down" style={{width:10, height:10}} severity="secondary" className='mt-5' onClick={(e) => menu.current.toggle(e)} text/>
+                                                <Button icon="pi pi-angle-down" style={{width:10, height:30}} severity="secondary" className='mt-5' onClick={(e) => menu.current.toggle(e)} text/>
                                             </div>
                                     </div>
                                 </div>
