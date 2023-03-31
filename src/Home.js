@@ -542,7 +542,9 @@ export default function Home() {
                                                         </div>
                                                         <div>
                                                 <a onClick={()=>setFilter(false)} class="text-2xl leading-none closebtn removeClass">×</a>
-                                                </div></div></div>
+                                                </div>
+                                                </div>
+                                                </div>
                                                 <header>Filter</header>
                                                 <div className='container'>
                                                     <div className='grid grid-cols-2'>
@@ -652,6 +654,16 @@ export default function Home() {
                                             style={{ width: 700 }}
                                         >
                                             <div className="grid grid-cols-4">
+                                            <div class="absolute top-0 left-0 right-0 w-full text-white h-14 bg-[url('../assest/img/business-people.png')]">
+                                                <div class="flex justify-between px-6 py-3">
+                                                    <div class="text-md">
+                                                        <h6 class="text-[white]">View Performance</h6>
+                                                        </div>
+                                                        <div>
+                                                <a onClick={()=>setVisible(false)} class="text-2xl leading-none closebtn removeClass">×</a>
+                                                </div>
+                                                </div>
+                                                </div>
                                                 <div className=" gap-4">
                                                     <span >Finantial year</span>
                                                     <span className="p-float-label">
