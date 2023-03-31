@@ -18,8 +18,8 @@ export default function Comparison() {
         { name: 'Marketing', key: 'M' },
         { name: 'Production', key: 'P' },
         { name: 'Research', key: 'R' },
-        { name: 'Software', key: 'R' },
-        { name: 'Networking', key: 'R' }
+        { name: 'Software', key: 'S' },
+        { name: 'Networking', key: 'N' }
     ];
     const [selectedCategories, setSelectedCategories] = useState([categories[1]]);
 
