@@ -176,7 +176,7 @@ export default function Business() {
 
 
                 <div className='col-span-2 '>
-                    <div className='bg-white py-3 max-h-full shadow-xl rounded-xl border border-[#E1E6E3] px-4 '>
+                    <div className='bg-white py-3 max-h-full shadow-xl rounded-xl border border-[#E1E6E3]  '>
                         <div> <p className=' text-green-600 bg-slate-100 text-lg flex '><img style={{ width: "40px", height: "40px" }} src='mony.png' /><div className='pl-2 pt-1'>Key Insight</div> </p></div>
                         <div className='list mb-5 w-80 pl-7 '>
                             <ul className="mt-4  justify-normal list-image-[url(yes.png)] ... ">
