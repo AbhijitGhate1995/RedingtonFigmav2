@@ -7,6 +7,7 @@ import Header from './Header';
 import { useState } from 'react';
 import { Sidebar } from 'primereact/sidebar';
 import { Dropdown } from 'primereact/dropdown';
+import { Link } from 'react-router-dom';
 
 
 export default function Home() {
@@ -526,9 +527,22 @@ export default function Home() {
                             <div className='grid grid-cols-2 justify-between'>
                                 <div className='flex gap-5'>
                                     <div className='text-center items-center' >
-                                        <Sidebar visible={filter} position="right" onHide={() => setFilter(false)} className="w-full md:w-20rem lg:w-30rem" style={{ width: 600 }}>
+                                    <Sidebar
+                                            visible={filter}
+                                            position="right"
+                                            onHide={() => setFilter(false)}
+                                            className=" md:w-20rem lg:w-30rem"
+                                            style={{ width: 700 }}
+                                        >
                                             <div>
-                                            <div class="absolute top-0 left-0 right-0 w-full text-white h-14 bg-[url('../assest/img/business-people.png')]"><div class="flex justify-between px-6 py-3"><div class="text-md"><h6 class="text-[white]">View Performance</h6></div><div><a class="text-2xl leading-none closebtn removeClass" href="/dashboard">×</a></div></div></div>
+                                            <div class="absolute top-0 left-0 right-0 w-full text-white h-14 bg-[url('../assest/img/business-people.png')]">
+                                                <div class="flex justify-between px-6 py-3">
+                                                    <div class="text-md">
+                                                        <h6 class="text-[white]">View Performance</h6>
+                                                        </div>
+                                                        <div>
+                                                <a onClick={()=>setFilter(false)} class="text-2xl leading-none closebtn removeClass">×</a>
+                                                </div></div></div>
                                                 <header>Filter</header>
                                                 <div className='container'>
                                                     <div className='grid grid-cols-2'>
@@ -668,11 +682,6 @@ export default function Home() {
                                                         <label htmlFor="dd-kpi">Revenue</label>
                                                     </span>
                                                 </div>
-
-
-
-
-
                                                 <div>
                                                     <span>Dimension</span>
                                                     <span className="p-float-label">
