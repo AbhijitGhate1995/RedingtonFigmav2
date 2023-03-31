@@ -1,13 +1,13 @@
 import React, { useRef } from 'react';
 import { useState } from 'react';
-import { Sidebar } from 'primereact/sidebar';
-import { Dropdown } from 'primereact/dropdown';
+
 import { Button } from 'primereact/button';
 import { SplitButton } from 'primereact/splitbutton';
 import { Badge } from 'primereact/badge';
 import ReactECharts from 'echarts-for-react';
 import Home from './Home';
 import { Outlet } from 'react-router-dom';
+import { Menu } from 'primereact/menu';
 
 
 
@@ -113,14 +113,9 @@ function Header() {
             label: "logout",
         },
     ];
-    const [selectedYear, setSelectedYear] = useState(null);
-    const Year = [
-        { name: "2018-19", code: "2018-19" },
-        { name: "2019-20", code: "2019-20" },
-        { name: "2020-21", code: "2020-21" },
-        { name: "2021-22", code: "2021-22" },
-    ];
+   
 
+    const menu = useRef(null);
     const items = [
         {
             icon: 'pi pi-user',
@@ -445,49 +440,7 @@ function Header() {
 
     };
 
-    const SimpleBar = {
-        xAxis: {
-            type: "category",
-            data: ["Dell", "Cisco", "HPE", "Microsoft", "EMC", "AutoDesk", "IBM HW"],
-        },
-        yAxis: {
-            type: "value",
-        },
-        series: [
-            {
-                itemStyle: { normal: { color: "#029046" } },
-                data: [5200, 2200, 1800, 1400, 1450, 1200, 900],
-
-                type: "bar",
-            },
-        ],
-    };
-
-    const upsideBar = {
-        xAxis: {
-            type: "category",
-            data: [
-                "Teja",
-                "Checkpoint",
-                "Volon",
-                "EPACTS",
-                "Nuance",
-                "Time Doctor",
-                "Smart",
-            ],
-        },
-        yAxis: {
-            type: "value",
-        },
-        series: [
-            {
-                itemStyle: { normal: { color: "#029046" } },
-                data: [1.3, 0.7, 0.6, 0.4, 0.3, 0.2, -2.3],
-                type: "bar",
-            },
-        ],
-    };
-    
+   
 
     return (
         <div className='bg-slate-100 '>
@@ -551,15 +504,16 @@ function Header() {
                                     <div className='row flex'>
                                         <div className='flex'><img src='../assest/img/Ellipse 1.png' className='w-auto' />
                                             <img src='../assest/img/Frame 36835.png' className='w-auto m-2' /></div>
-                                        <SplitButton model={items} severity="secondary" className=' ' text>
-                                        </SplitButton>
+                                            <div className="card flex justify-content-center text-black items-center ml-4">
+                                                <Menu model={items} popup ref={menu} />
+                                                <Button icon="pi pi-angle-down" style={{width:10, height:10}} severity="secondary" className='mt-5' onClick={(e) => menu.current.toggle(e)} text/>
+                                            </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                        
                     </header>
-                  
                     <Outlet>
                         
                     </Outlet>
