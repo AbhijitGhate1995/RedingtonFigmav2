@@ -205,9 +205,9 @@ export default function Comparison() {
 
                                         </div>
 
-                                        <div> <ReactECharts style={{ height: "240px", width: "140px" }} option={Circle1}></ReactECharts><h1 className=' font-semibold'>Cloud</h1></div>
-                                        <div> <ReactECharts style={{ height: "240px", width: "140px" }} option={Circle2}></ReactECharts><h1 className=' font-semibold'>L&S</h1></div>
-                                        <div> <ReactECharts style={{ height: "240px", width: "140px" }} option={Circle3}></ReactECharts><h1 className=' font-semibold'>Security</h1></div>
+                                        <div> <ReactECharts style={{ height: "240px", width: "140px" }} option={Circle1}></ReactECharts><h1 className='pl-12 font-semibold'>Cloud</h1></div>
+                                        <div> <ReactECharts style={{ height: "240px", width: "140px" }} option={Circle2}></ReactECharts><h1 className='pl-12 font-semibold'>L&S</h1></div>
+                                        <div> <ReactECharts style={{ height: "240px", width: "140px" }} option={Circle3}></ReactECharts><h1 className='pl-11 font-semibold'>Security</h1></div>
 
                                     </div>
                                 </div>
@@ -219,9 +219,9 @@ export default function Comparison() {
 
                                     </div>
 
-                                    <div> <ReactECharts style={{ height: "240px", width: "140px" }} option={Circle1}></ReactECharts><h1 className='pl-9 font-semibold'>Cloud</h1></div>
-                                    <div> <ReactECharts style={{ height: "240px", width: "140px" }} option={Circle2}></ReactECharts><h1 className=' font-semibold'>L&S</h1></div>
-                                    <div> <ReactECharts style={{ height: "240px", width: "140px" }} option={Circle3}></ReactECharts><h1 className=' font-semibold'>Security</h1></div>
+                                    <div> <ReactECharts style={{ height: "240px", width: "140px" }} option={Circle1}></ReactECharts><h1 className='pl-12 font-semibold'>Cloud</h1></div>
+                                    <div> <ReactECharts style={{ height: "240px", width: "140px" }} option={Circle2}></ReactECharts><h1 className='pl-12 font-semibold'>L&S</h1></div>
+                                    <div> <ReactECharts style={{ height: "240px", width: "140px" }} option={Circle3}></ReactECharts><h1 className='pl-11 font-semibold'>Security</h1></div>
 
                                 </div>
                             </div>

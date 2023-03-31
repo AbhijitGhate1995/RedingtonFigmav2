@@ -488,7 +488,7 @@ function Header() {
                     </div>
                 </nav>
                 <main class="flex-1 min-w-0  ml-20 mt-1 p-2 z-0">
-                    <header class=" p-0 w-full h-15 sticky fixed">
+                    <header class=" p-0 w-full h-15 sticky">
                         <div className='flex items-center justify-between px-5'>
                             <div className='object-left'>
                                 <div className='flex lg:flex-1 text-sm'>Dashboard</div>
