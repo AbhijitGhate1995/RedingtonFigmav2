@@ -4,8 +4,151 @@ import * as echarts from 'echarts/dist/echarts.js';
 import { Menu } from 'primereact/menu';
 import { Button } from 'primereact/button';
 import Header from './Header';
+import { useState } from 'react';
+import { Sidebar } from 'primereact/sidebar';
+import { Dropdown } from 'primereact/dropdown';
+
 
 export default function Home() {
+    const [visible, setVisible] = useState(false);
+    const [filter, setFilter] = useState(false);
+    const [selectedCity, setSelectedCity] = useState(null);
+    const cities = [
+        { name: "2018-19", code: "NY" },
+        { name: "2019-20", code: "RM" },
+        { name: "2020-21", code: "LDN" },
+        { name: "2021-22", code: "IST" },
+        { name: "2022-2023", code: "PRS" },
+    ];
+
+    const [selectedSUB, setSelectedSUB] = useState(null);
+    const SUB = [
+        { name: "All", code: "All" },
+        { name: "Cloud", code: "Cloud" },
+        { name: "L&S", code: "L & S" },
+        { name: "Software", code: "Sofware" },
+    ];
+
+    const [selectedKPI, setSelectedKpi] = useState(null);
+    const Kpi = [
+        { name: "All", code: "All" },
+        { name: "Revenue", code: "Revenue" },
+        { name: "Margin", code: "Margin" },
+        { name: "Opex", code: "Opex" },
+        { name: "Income", code: "Income" },
+        { name: "Working Capital", code: "Working Capital" },
+        { name: "Profitability", code: "Profitability" },
+    ];
+    const [selectedDimension, setSelectedDimension] = useState(null);
+    const Dimension = [
+        { name: "SBU" },
+        { name: "Business Manager" },
+        { name: "Vendor" },
+        { name: "Cost Center" },
+    ];
+    const [selectedCount, setSelectedCount] = useState(null);
+    const Count = [{ name: "5" }, { name: "10" }, { name: "15" }, { name: "20" }];
+
+    const [selectedOwner, setSelectedOwner] = useState(null);
+    const Owner = [
+        { name: "Dinesh", code: "All" },
+        { name: "Mayur", code: "Cloud" },
+        { name: "Others", code: "L & S" },
+        { name: "Sufiyan", code: "Sofware" },
+        { name: "Shivam", code: "Sofware" },
+        { name: "Inactive", code: "Sofware" },
+        { name: "Giridhar", code: "Sofware" },
+        { name: "Vardharajan", code: "Sofware" },
+        { name: "Krishnaprasad", code: "Sofware" },
+        { name: "Swapna", code: "Sofware" },
+        { name: "BUCODE", code: "Sofware" },
+        { name: "Rajmolkan", code: "Sofware" },
+        { name: "ALok", code: "Sofware" },
+        { name: "Ram", code: "Sofware" },
+    ];
+    const [selectedVendor, setSelectedVendor] = useState(null);
+    const Vendor = [
+        { name: "Networking", code: "All" },
+        { name: "Cloud", code: "Cloud" },
+        { name: "L&S", code: "L & S" },
+        { name: "Software", code: "Sofware" },
+        { name: "ESS", code: "Sofware" },
+        { name: "Security", code: "Sofware" },
+        { name: "Dell EMC", code: "Sofware" },
+    ];
+    const [selectedProfit, setSelectedProfit] = useState(null);
+    const Profit = [
+        { name: "LSCL", code: "All" },
+        { name: "MSOF", code: "Cloud" },
+        { name: "CACL", code: "L & S" },
+        { name: "AMFG", code: "Sofware" },
+        { name: "MSIN", code: "Sofware" },
+        { name: "IBSL", code: "Sofware" },
+        { name: "MSID", code: "Sofware" },
+        { name: "IBTS", code: "Sofware" },
+        { name: "VSCL", code: "Sofware" },
+        { name: "AUSW", code: "Sofware" },
+        { name: "ICMS", code: "Sofware" },
+        { name: "KFCL", code: "Sofware" },
+        { name: "TRCL", code: "Sofware" },
+        { name: "AWSC", code: "Sofware" },
+        { name: "VLCL", code: "Sofware" },
+        { name: "BUCL", code: "Sofware" },
+        { name: "MSCL", code: "Sofware" },
+        { name: "MSDN", code: "Sofware" },
+
+    ];
+    const [selectedYear, setSelectedYear] = useState(null);
+    const Year = [
+        { name: "2018-19", code: "2018-19" },
+        { name: "2019-20", code: "2019-20" },
+        { name: "2020-21", code: "2020-21" },
+        { name: "2021-22", code: "2021-22" },
+    ];
+    const SimpleBar = {
+        xAxis: {
+            type: "category",
+            data: ["Dell", "Cisco", "HPE", "Microsoft", "EMC", "AutoDesk", "IBM HW"],
+        },
+        yAxis: {
+            type: "value",
+        },
+        series: [
+            {
+                itemStyle: { normal: { color: "#029046" } },
+                data: [5200, 2200, 1800, 1400, 1450, 1200, 900],
+
+                type: "bar",
+            },
+        ],
+    };
+
+    const upsideBar = {
+        xAxis: {
+            type: "category",
+            data: [
+                "Teja",
+                "Checkpoint",
+                "Volon",
+                "EPACTS",
+                "Nuance",
+                "Time Doctor",
+                "Smart",
+            ],
+        },
+        yAxis: {
+            type: "value",
+        },
+        series: [
+            {
+                itemStyle: { normal: { color: "#029046" } },
+                data: [1.3, 0.7, 0.6, 0.4, 0.3, 0.2, -2.3],
+                type: "bar",
+            },
+        ],
+    };
+    
+
     const Circle = {
         tooltip: {
             trigger: 'item'
@@ -52,7 +195,7 @@ export default function Home() {
         },
         legend: {
             top: '1%',
-            left: 'right',
+            left: '40%',
             show: true
         },
         xAxis: {
@@ -134,7 +277,7 @@ export default function Home() {
         },
         legend: {
             top: '1%',
-            left: 'right',
+            left: '40%',
             fontSize: '1px',
             show: true
         },
@@ -217,7 +360,7 @@ export default function Home() {
         },
         legend: {
             top: '5%',
-            left: 'right',
+            left: '40%',
             show: true
         },
         xAxis: {
@@ -263,14 +406,14 @@ export default function Home() {
        
         legend: {
             top: '1%',
-            left: 'right',
+            left: '40%',
             
         },
         grid: {
             left: '23%',
             right: '2%',
-            bottom: '3%',
-            top:'7%',
+            bottom: '1%',
+            top:'19%',
 
         },
         xAxis: {
@@ -378,7 +521,237 @@ export default function Home() {
    
 
     return (
-        <>
+        <><div>
+            <div className='w-full p-4'>
+                            <div className='grid grid-cols-2 justify-between'>
+                                <div className='flex gap-5'>
+                                    <div className='text-center items-center' >
+                                        <Sidebar visible={filter} position="right" onHide={() => setFilter(false)} className="w-full md:w-20rem lg:w-30rem" style={{ width: 600 }}>
+                                            <div>
+                                            <div class="absolute top-0 left-0 right-0 w-full text-white h-14 bg-[url('../assest/img/business-people.png')]"><div class="flex justify-between px-6 py-3"><div class="text-md"><h6 class="text-[white]">View Performance</h6></div><div><a class="text-2xl leading-none closebtn removeClass" href="/dashboard">×</a></div></div></div>
+                                                <header>Filter</header>
+                                                <div className='container'>
+                                                    <div className='grid grid-cols-2'>
+                                                        <div className='gap-3 mr-2'>
+                                                            <div className="grid w-full mb-5">
+                                                                <label className="text-sm font-medium">Fiancial Year</label>
+                                                                <Dropdown
+                                                                    value={selectedYear}
+                                                                    onChange={(e) => setSelectedYear(e.value)}
+                                                                    options={Year}
+                                                                    optionLabel="name"
+                                                                    placeholder="--Select Year --"
+                                                                    className="w-full md:w-12rem text-sm pt-0"
+                                                                />
+                                                           </div>
+                                                           <div className=" grid ">
+                                                                <label className="text-sm font-medium">SUB</label>
+                                                                <Dropdown
+                                                                    value={selectedSUB}
+                                                                    onChange={(e) => setSelectedSUB(e.value)}
+                                                                    options={SUB}
+                                                                    optionLabel="name"
+                                                                    placeholder="--Select  --"
+                                                                    className="w-full md:w-12rem text-sm pt-0"
+                                                                />
+                                                            </div>
+                                                        </div>
+                                                        <div className='gap-3 ml-2'>
+                                                            <div className=" grid ">
+                                                                <label className="text-sm font-medium">Owner</label>
+                                                                <Dropdown
+                                                                    value={selectedOwner}
+                                                                    onChange={(e) => setSelectedOwner(e.value)}
+                                                                    options={Owner}
+                                                                    optionLabel="name"
+                                                                    placeholder="--Select  --"
+                                                                    className="w-full md:w-12rem text-sm pt-0"
+                                                                />
+                                                            </div>
+                                                           <div className=" grid mt-5 mb-5">
+                                                                <label className="text-sm font-medium">Vendor</label>
+                                                                <Dropdown
+                                                                    value={selectedVendor}
+                                                                    onChange={(e) => setSelectedVendor(e.value)}
+                                                                    options={Vendor}
+                                                                    optionLabel="name"
+                                                                    placeholder="--Select  --"
+                                                                    className="w-full md:w-12rem text-sm pt-0"
+                                                                />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div className=" grid">
+                                                        <label className="text-sm font-medium">Profit Center</label>
+                                                        <Dropdown
+                                                            value={selectedProfit}
+                                                            onChange={(e) => setSelectedProfit(e.value)}
+                                                            options={Profit}
+                                                            optionLabel="name"
+                                                            placeholder="--Select  --"
+                                                            className=" md:w-12rem text-sm pt-0 w-1/2"
+                                                        />
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </Sidebar>
+                                        <a onClick={() => setFilter(true)}  ><img src='./assest/img/_button base.png' className='mt-6' /></a>
+                                    </div>
+                                    <div className="flex ">
+                                        <div className="">
+                                            <div>
+                                                <label className="text-sm font-light">Fiancial Year</label>
+                                            </div>
+                                            <Dropdown
+                                                value={selectedYear}
+                                                onChange={(e) => setSelectedYear(e.value)}
+                                                options={Year}
+                                                optionLabel="name"
+                                                placeholder="2021-22"
+                                                className="w-22 md:w-12rem text-sm h-7 items-center m-auto pt-0"
+                                            />
+                                        </div>
+                                        <div className='ml-2'>
+                                            <div className='block '>
+                                                <label className="text-sm font-light">SUB   </label>
+                                            </div >
+                                            <Dropdown
+                                                value={selectedSUB}
+                                                onChange={(e) => setSelectedSUB(e.value)}
+                                                options={SUB}
+                                                optionLabel="name"
+                                                placeholder="Select a SUB"
+                                                className="w-22 md:w-12rem text-sm h-7 items-center"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div className="flex justify-end mt-3">
+                                        <Sidebar
+                                            visible={visible}
+                                            position="right"
+                                            onHide={() => setVisible(false)}
+                                            className=" md:w-20rem lg:w-30rem"
+                                            style={{ width: 700 }}
+                                        >
+                                            <div className="grid grid-cols-4">
+                                                <div className=" gap-4">
+                                                    <span >Finantial year</span>
+                                                    <span className="p-float-label">
+                                                        <Dropdown
+                                                            inputId="dd-city"
+                                                            value={selectedCity}
+                                                            onChange={(e) => setSelectedCity(e.value)}
+                                                            options={cities}
+                                                            optionLabel="name"
+                                                            className=" md:w-14rem"
+                                                        />
+                                                        <label htmlFor="dd-city">2018-19</label>
+                                                    </span>
+                                                </div>
+
+                                                <div>
+                                                    <span>KPI</span>
+                                                    <span className="p-float-label">
+                                                        <Dropdown
+                                                            inputId="dd-kpi"
+                                                            value={selectedKPI}
+                                                            onChange={(e) => setSelectedKpi(e.value)}
+                                                            options={Kpi}
+                                                            optionLabel="name"
+                                                            className=" md:w-14"
+                                                            style={{ width: 150 }}
+                                                        />
+                                                        <label htmlFor="dd-kpi">Revenue</label>
+                                                    </span>
+                                                </div>
+
+
+
+
+
+                                                <div>
+                                                    <span>Dimension</span>
+                                                    <span className="p-float-label">
+                                                        <Dropdown
+                                                            inputId="dd-Dimension"
+                                                            value={selectedDimension}
+                                                            onChange={(e) => setSelectedDimension(e.value)}
+                                                            options={Dimension}
+                                                            optionLabel="name"
+                                                            className=" md:w-14"
+                                                            style={{ width: 150 }}
+                                                        />
+                                                        <label htmlFor="dd-Dimension">Vendor</label>
+                                                    </span>
+                                                </div>
+
+                                                <div>
+                                                    <span>Count of Dimension</span>
+                                                    <span className="p-float-label">
+                                                        <Dropdown
+                                                            inputId="dd-Count"
+                                                            value={selectedCount}
+                                                            onChange={(e) => setSelectedCount(e.value)}
+                                                            options={Count}
+                                                            optionLabel="name"
+                                                            className=" md:w-14"
+                                                            style={{ width: 150 }}
+                                                        />
+                                                        <label htmlFor="dd-Count">5</label>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <ReactECharts
+                                                    option={SimpleBar}
+                                                    itemStyle={{ backgroundColor: "green" }}
+                                                />
+                                            </div>
+                                            <div className="grid">
+                                                <div className="flex gap-3 bg-slate-100">
+                                                    <img src="../Insight.png" alt="Insight" />
+                                                    Key Insights
+                                                </div>
+                                                <div className="flex gap-2 mt-2">
+                                                    <img src="../Right.png" style={{ height: 30 }} />
+                                                    <p>
+                                                        Dell has earned ₹ 1983 Cr which is highest revenue
+                                                        earned among our vendors.It has increased 41% YoY has
+                                                        increased by 73% compared to last year followed by Cisco
+                                                        and HPE with ₹791 Cr and ₹746 Cr respectively.HPE has
+                                                        grown with 222% YoY grown by 28% YoY,however the growth
+                                                        of Cisco compared to last year is 0%{" "}
+                                                    </p>
+                                                </div>
+                                                <div className="flex gap-2">
+                                                    <img src="../Right.png" style={{ height: 30 }} />
+                                                    <p>
+                                                        Oracle HW, Commscope and Fortinet are last 3 in top
+                                                        vendor list. with the revenue of ₹202 Cr, ₹200 Cr and ₹
+                                                        191 Cr with an YoY growth of 10%,11% and 5%
+                                                        respectively.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <ReactECharts option={upsideBar} />
+                                            </div>
+                                        </Sidebar>
+                                        <Button
+                                            onClick={() => setVisible(true)}
+                                            severity="secondary"
+                                            className="bg-surface-900 h-8 w-auto">
+                                            View Performance
+                                        </Button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        </div>
         <div className='mt-7'>
         <div className="grid flex-row gap-3 2xl:grid-cols-4 xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-1 overallstatus">
             <div className='hover:drop-shadow-lg'>
@@ -479,19 +852,19 @@ export default function Home() {
                 <div className="flex gap-2 mb-3 justify-evenly">
                     <div className="p-3 border border-[#E1E6E3] rounded-[5px] grow"><p className="text-[12px] font-normal text-[#344054]">Gross Sale</p>
                         <div className="flex items-center gap-1"> <b>&#8377;199.63 Cr</b>
-                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span><img src='Vector (1).png' /><img src='Green.png' /></span>
+                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span className='flex'><img src='Vector (1).png' /><img src='Green.png' /></span>
                             </div>
                         </div>
                     </div>
                     <div className="p-3 border border-[#E1E6E3] rounded-[5px] grow"><p className="text-[12px] font-normal text-[#344054]">Revenue</p>
                         <div className="flex items-center gap-1"> <b>&#8377;197 Cr</b>
-                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span><img src='Vector (1).png' /><img src='Green.png' /></span>
+                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span className='flex'><img src='Vector (1).png' /><img src='Green.png' /></span>
                             </div>
                         </div>
                     </div>
                     <div className="p-3 border border-[#E1E6E3] rounded-[5px] grow"><p className="text-[12px] font-normal text-[#344054]">Revenue/Group</p>
                         <div className="flex items-center gap-1"> <b>&#8377;17 Cr</b>
-                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span><img src='Vector.png' /><img src='Pink.png' /></span>
+                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span className='flex'><img src='Vector.png' /><img src='Pink.png' /></span>
                             </div>
                         </div>
                     </div>
@@ -501,15 +874,15 @@ export default function Home() {
                         <div className="bg-[#F9FAFB] rounded-md h-36 w-42 p-2">
                             <p className="text-[16px] font-semibold text-[#344054] text-center">Target vs. Actual</p>
                             <div>
-                                <ReactECharts style={{ height: "100px", width: "140px" }} option={Circle}></ReactECharts>
+                                <ReactECharts style={{ height: "100px", width: "180px" }} option={Circle}></ReactECharts>
                             </div>
                         </div>
                     </div>
                     <div className="col-span-3">
-                        <div className="bg-[#F9FAFB] rounded-md p-2 h-36 w-72">
+                        <div className="bg-[#F9FAFB] rounded-md p-2 h-36 w-80"style={{width:'338px'}}>
                             <p className="text-[13px] font-semibold text-[#344054]">Revenue Trend</p>
                             <div >
-                                <ReactECharts style={{ height: "111px", width: "270px" }} option={Bar}></ReactECharts>
+                                <ReactECharts style={{ height: "111px", width: "350px" }} option={Bar}></ReactECharts>
                             </div>
                         </div>
                    </div>
@@ -526,19 +899,19 @@ export default function Home() {
                 <div className="flex gap-2 mb-3 justify-evenly">
                     <div className="p-3 border border-[#E1E6E3] rounded-[5px] grow"><p className="text-[12px] font-normal text-[#344054]">GM before Provision</p>
                         <div className="flex items-center gap-1"> <b>&#8377;45 Cr</b>
-                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span><img src='Vector (1).png' /><img src='Green.png' /></span>
+                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span className='flex'><img src='Vector (1).png' /><img src='Green.png' /></span>
                             </div>
                         </div>
                     </div>
                     <div className="p-3 border border-[#E1E6E3] rounded-[5px] grow"><p className="text-[12px] font-normal text-[#344054]">GM after Provision</p>
                         <div className="flex items-center gap-1"> <b>&#8377;50 Cr</b>
-                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span><img src='Vector.png' /><img src='Pink.png' /></span>
+                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span className='flex'><img src='Vector.png' /><img src='Pink.png' /></span>
                             </div>
                         </div>
                     </div>
                     <div className="p-3 border border-[#E1E6E3] rounded-[5px] grow"><p className="text-[12px] font-normal text-[#344054]">GM%</p>
                         <div className="flex items-center gap-1"> <b>4%</b>
-                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span><img src='Vector.png' /><img src='Pink.png' /></span>
+                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span className='flex'><img src='Vector.png' /><img src='Pink.png' /></span>
                             </div>
                         </div>
                     </div>
@@ -548,15 +921,15 @@ export default function Home() {
                         <div className="bg-[#F9FAFB] rounded-md h-36 w-42 p-2">
                             <p className="text-[16px] font-semibold text-[#344054] text-center">Target vs. Actual</p>
                             <div>
-                                <ReactECharts style={{ height: "100px", width: "140px" }} option={Circle2}></ReactECharts>
+                                <ReactECharts style={{ height: "100px", width: "180px" }} option={Circle2}></ReactECharts>
                             </div>
                         </div>
                     </div>
                     <div className="col-span-3">
-                        <div className="bg-[#F9FAFB] rounded-md p-2 h-36 w-72">
+                        <div className="bg-[#F9FAFB] rounded-md p-2 h-36 w-80" style={{width:'338px'}}>
                             <p className="text-[13px] font-semibold text-[#344054]">Margin Trend</p>
                             <div>
-                                <ReactECharts style={{ height: "111px", width: "270px" }} option={Bar2}></ReactECharts>
+                                <ReactECharts style={{ height: "111px", width: "350px" }} option={Bar2}></ReactECharts>
                             </div>
                         </div>
                     </div>
@@ -573,19 +946,19 @@ export default function Home() {
                 <div className="flex gap-2 mb-3 justify-evenly">
                     <div className="p-3 border border-[#E1E6E3] rounded-[5px] grow"><p className="text-[12px] font-normal text-[#344054]">Expence</p>
                         <div className="flex items-center gap-1"> <b>&#8377;17 Cr</b>
-                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span><img src='Vector (1).png' /><img src='Green.png' /></span>
+                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span className='flex'><img src='Vector (1).png' /><img src='Green.png' /></span>
                             </div>
                         </div>
                     </div>
                     <div className="p-3 border border-[#E1E6E3] rounded-[5px] grow"><p className="text-[12px] font-normal text-[#344054]">Expence Under Managment</p>
                         <div className="flex items-center gap-1"> <b>&#8377;10 Cr</b>
-                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span><img src='Vector (1).png' /><img src='Green.png' /></span>
+                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span className='flex'><img src='Vector (1).png' /><img src='Green.png' /></span>
                             </div>
                         </div>
                     </div>
                     <div className="p-3 border border-[#E1E6E3] rounded-[5px] grow"><p className="text-[12px] font-normal text-[#344054]">EUM</p>
                         <div className="flex items-center gap-1"> <b>4%</b>
-                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span><img src='Vector.png' /><img src='Pink.png' /></span>
+                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span className='flex'><img src='Vector.png' /><img src='Pink.png' /></span>
                             </div>
                         </div>
                     </div>
@@ -596,16 +969,16 @@ export default function Home() {
                             <p className="text-[16px] font-semibold text-[#344054] text-center">Target vs. Actual</p>
 
                             <div >
-                                <ReactECharts style={{ height: "100px", width: "140px" }} option={circle3}></ReactECharts>
+                                <ReactECharts style={{ height: "100px", width: "180px" }} option={circle3}></ReactECharts>
                             </div>
                         </div>
                     </div>
                     <div className="col-span-3">
-                        <div className="bg-[#F9FAFB] rounded-md p-2 h-36 w-72">
+                        <div className="bg-[#F9FAFB] rounded-md p-2 h-36 w-80" style={{width:'338px'}}>
                             <p className="text-[13px] font-semibold text-[#344054]">Expence Trend</p>
 
                             <div >
-                                <ReactECharts style={{ height: "111px", width: "270px" }} option={Bar3}></ReactECharts>
+                                <ReactECharts style={{ height: "111px", width: "350px" }} option={Bar3}></ReactECharts>
                             </div>
                         </div>
                     </div>
@@ -622,31 +995,31 @@ export default function Home() {
                 <div className="flex gap-2 mb-3 justify-evenly">
                     <div className="p-3 w-2.4/12 border border-[#E1E6E3] rounded-[5px] grow"><p className="text-[12px] font-normal text-[#344054]">EBIT</p>
                         <div className="flex items-center gap-1"> <b>&#8377;32.63 Cr</b>
-                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span><img src='Vector (1).png' /><img src='Green.png' /></span>
+                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span className='flex'><img src='Vector (1).png' /><img src='Green.png' /></span>
                             </div>
                         </div>
                     </div>
                     <div className="p-3 w-2.4/12 border border-[#E1E6E3] rounded-[5px] grow"><p className="text-[12px] font-normal text-[#344054]">EBIT%</p>
                         <div className="flex items-center gap-1"> <b>4.1%</b>
-                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span><img src='Vector.png' /><img src='Pink.png' /></span>
+                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span className='flex'><img src='Vector.png' /><img src='Pink.png' /></span>
                             </div>
                         </div>
                     </div>
                     <div className="p-3 w-2.4/12 border border-[#E1E6E3] rounded-[5px] grow"><p className="text-[12px] font-normal text-[#344054]">EBITDA</p>
                         <div className="flex items-center gap-1"> <b>&#8377;30 Cr</b>
-                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span><img src='Vector (1).png' /><img src='Green.png' /></span>
+                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span className='flex'><img src='Vector (1).png' /><img src='Green.png' /></span>
                             </div>
                         </div>
                     </div>
                     <div className="p-3 w-2.4/12 border border-[#E1E6E3] rounded-[5px] grow"><p className="text-[12px] font-normal text-[#344054]">EBITDA</p>
                         <div className="flex items-center gap-1"> <b>&#8377;30 Cr</b>
-                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span><img src='Vector (1).png' /><img src='Green.png' /></span>
+                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span className='flex'><img src='Vector (1).png' /><img src='Green.png' /></span>
                             </div>
                         </div>
                     </div>
                     <div className="p-3 w-2.4/12 border border-[#E1E6E3] rounded-[5px] grow"><p className="text-[12px] font-normal text-[#344054]">EBITDA</p>
                         <div className="flex items-center gap-1"> <b>&#8377;30 Cr</b>
-                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span><img src='Vector (1).png' /><img src='Green.png' /></span>
+                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span className='flex'><img src='Vector (1).png' /><img src='Green.png' /></span>
                             </div>
                         </div>
                     </div>
@@ -656,16 +1029,16 @@ export default function Home() {
                         <div className="bg-[#F9FAFB] rounded-md h-36 w-42 p-2">
                             <p className="text-[16px] font-semibold text-[#344054] text-center">Target vs. Actual</p>
                             <div>
-                                <ReactECharts style={{ height: "120px", width: "140px" }} option={Circle4}></ReactECharts>
+                                <ReactECharts style={{ height: "120px", width: "180px" }} option={Circle4}></ReactECharts>
                             </div>
                         </div>
                     </div>
                     <div className="col-span-3">
-                        <div className="bg-[#F9FAFB] rounded-md p-2 h-36 w-72">
+                        <div className="bg-[#F9FAFB] rounded-md p-2 h-36 w-80" style={{width:'338px'}}>
                             <p className="text-[13px] font-semibold text-[#344054]">Income Trend</p>
 
                             <div>
-                                <ReactECharts style={{ height: "110px", width: "270px" }} option={horizontal4}></ReactECharts>
+                                <ReactECharts style={{ height: "110px", width: "320px" }} option={horizontal4}></ReactECharts>
                             </div>
                         </div>
                     </div>
