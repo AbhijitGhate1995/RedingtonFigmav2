@@ -541,7 +541,7 @@ export default function Home() {
                                                         <h6 class="text-[white]">View Performance</h6>
                                                         </div>
                                                         <div>
-                                                <a onClick={()=>setFilter(false)} class="text-2xl leading-none closebtn removeClass">×</a>
+                                                <a onClick={()=>setFilter(false)} class="text-2xl leading-none closebtn removeClass">X</a>
                                                 </div>
                                                 </div>
                                                 </div>
@@ -611,8 +611,21 @@ export default function Home() {
 
                                                 </div>
                                             </div>
+                                            {/* Footer Buttons of sideBar */}
+                                            <div>            
+                                                <div className=' mt-80'>
+                                                <div className='w-full rounded-md bg-black text-right'>
+                                                    <div className='text-right py-3 justify-evenly'>
+                                                        <button onClick={()=>setFilter(false)} className='bg-white text-black rounded-md px-2 py-2 mx-2'>Cancel</button>                            
+                                                        <button className=' bg-green-500  text-white rounded-md px-2 py-2 mx-2'>Apply Filter</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    
+                                            </div>
 
                                         </Sidebar>
+                                        {/* No Changes here */}
                                         <a onClick={() => setFilter(true)}  ><img src='./assest/img/_button base.png' className='mt-6' /></a>
                                     </div>
                                     <div className="flex ">
@@ -760,6 +773,13 @@ export default function Home() {
                                             </div>
                                             <div>
                                                 <ReactECharts option={upsideBar} />
+                                            </div>
+                                            <div>
+                                                <div className='w-full rounded-md bg-black text-right'>
+                                                    <div className='text-right px-2 py-2'>
+                                                        <button onClick={()=>setVisible(false)}  className='bg-white text-black rounded-md px-2 py-2'>Cancel</button>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </Sidebar>
                                         <Button
