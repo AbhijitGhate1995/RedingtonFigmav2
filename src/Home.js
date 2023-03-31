@@ -489,6 +489,198 @@ export default function Home() {
         ]
 
     };
+    const line1 = {
+        xAxis: {
+            type: 'category',
+            splitLine: {
+                show: false
+            },
+        },
+        grid: {
+            height: "85%",
+            top: '8%',
+            right: '5%',
+            left: '10%',
+            bottom: '70%',
+            containLabel: false,
+            borderRadius: 15
+        },
+        yAxis: {
+            type: 'value',
+            splitLine: {
+                show: true,
+                lineStyle: {
+                    type: 'dashed'
+                }
+            },
+        },
+        series: [
+            {
+              data: [200, 30, 50, 96, 60, 76, 221],
+                type: 'line',
+                symbol: 'circle',
+                symbolSize: 30,
+                label: {
+                    show: true,
+                    fontSize: 12,
+                    position: ['22%', '30%'],
+                    color: '#fff',
+                  },
+                lineStyle: {
+                    color: '#f87171',
+                    width: 2,
+                    type: 'line'
+                },
+                itemStyle: {
+    
+                    color: '#526652',
+                    borderWidth: 2,
+                    borderColor: '#526652',
+                    shadowBlur: 4,
+                    shadowColor: "rgba(0, 0, 0, 0.25)"
+    
+                }
+    
+    
+            }
+        ]
+    };
+    const line2 = {
+        xAxis: {
+            type: 'category',
+            splitLine: {
+                show: false
+            },
+        },
+        grid: {
+            height: "85%",
+            top: '8%',
+            right: '5%',
+            left: '10%',
+            bottom: '70%',
+            containLabel: false,
+            borderRadius: 15
+        },
+        yAxis: {
+            type: 'value',
+            splitLine: {
+                show: true,
+                lineStyle: {
+                    type: 'dashed'
+                }
+            },
+        },
+        series: [
+            {
+              data: [200, 30, 50, 96, 60, 76, 221],
+                type: 'line',
+                symbol: 'circle',
+                symbolSize: 30,
+                label: {
+                    show: true,
+                    fontSize: 12,
+                    position: ['22%', '30%'],
+                    color: '#fff',
+                  },
+                lineStyle: {
+                    color: '#526652',
+                    width: 2,
+                    type: 'line'
+                },
+                itemStyle: {
+    
+                    color: '#526652',
+                    borderWidth: 2,
+                    borderColor: '#526652',
+                    shadowBlur: 4,
+                    shadowColor: "rgba(0, 0, 0, 0.25)"
+    
+                }
+    
+    
+            }
+        ]
+    };
+    const Circle5 = {
+        tooltip: {
+            trigger: 'item'
+        },
+        legend: {
+            top: '5%',
+            left: 'center',
+            show: false
+        },
+        series: [
+            {
+                type: 'pie',
+                radius: ['50', '50%'],
+                avoidLabelOverlap: false,
+                label: {
+                    show: true,
+                    position: 'center',
+                    itemStyle: {
+                        color: "black"
+                    }
+                },
+                emphasis: {
+                    label: {
+                        show: true,
+                        fontSize: 40,
+                        fontWeight: 'bold'
+                    }
+                },
+                labelLine: {
+                    show: true
+                },
+                data: [
+                    { value: 70, name: "70%", itemStyle: { color: '#dc2626' } },
+                    { value: 30, itemStyle: { color: '#E4E7EC' }, },
+
+                ]
+            }
+        ]
+
+    };
+    const Circle6 = {
+        tooltip: {
+            trigger: 'item'
+        },
+        legend: {
+            top: '5%',
+            left: 'center',
+            show: false
+        },
+        series: [
+            {
+                type: 'pie',
+                radius: ['50', '50%'],
+                avoidLabelOverlap: false,
+                label: {
+                    show: true,
+                    position: 'center',
+                    itemStyle: {
+                        color: "black"
+                    }
+                },
+                emphasis: {
+                    label: {
+                        show: true,
+                        fontSize: 40,
+                        fontWeight: 'bold'
+                    }
+                },
+                labelLine: {
+                    show: true
+                },
+                data: [
+                    { value: 70, name: "70%", itemStyle: { color: '#065f46' } },
+                    { value: 30, itemStyle: { color: '#E4E7EC' }, },
+
+                ]
+            }
+        ]
+
+    };
     const menu = useRef(null);
     const revenuelist = [
         {
@@ -1085,8 +1277,132 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
+                    <div className="bg-white py-3 rounded-xl border  border-[#E1E6E3] px-4">
+                <div className="flex justify-between mb-4">
+                    <span className="font-semibold">Income</span>
+                    <div className="card flex justify-content-center text-black">
+                        <Menu model={revenuelist} popup ref={menu} />
+                        <Button icon="pi pi-ellipsis-v" style={{width:10, height:10}} severity="secondary" onClick={(e) => menu.current.toggle(e)} text/>
+                    </div>
+                </div>
+                <div className="flex gap-2 mb-3 justify-evenly">
+                    <div className="p-3 w-2.4/12 border border-[#E1E6E3] rounded-[5px] grow"><p className="text-[12px] font-normal text-[#344054]">EBIT</p>
+                        <div className="flex items-center gap-1"> <b>&#8377;32.63 Cr</b>
+                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span className='flex'><img src='Vector (1).png' /><img src='Green.png' /></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="p-3 w-2.4/12 border border-[#E1E6E3] rounded-[5px] grow"><p className="text-[12px] font-normal text-[#344054]">EBIT%</p>
+                        <div className="flex items-center gap-1"> <b>4.1%</b>
+                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span className='flex'><img src='Vector.png' /><img src='Pink.png' /></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="p-3 w-2.4/12 border border-[#E1E6E3] rounded-[5px] grow"><p className="text-[12px] font-normal text-[#344054]">EBITDA</p>
+                        <div className="flex items-center gap-1"> <b>&#8377;30 Cr</b>
+                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span className='flex'><img src='Vector (1).png' /><img src='Green.png' /></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="p-3 w-2.4/12 border border-[#E1E6E3] rounded-[5px] grow"><p className="text-[12px] font-normal text-[#344054]">EBITDA</p>
+                        <div className="flex items-center gap-1"> <b>&#8377;30 Cr</b>
+                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span className='flex'><img src='Vector (1).png' /><img src='Green.png' /></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="p-3 w-2.4/12 border border-[#E1E6E3] rounded-[5px] grow"><p className="text-[12px] font-normal text-[#344054]">EBITDA</p>
+                        <div className="flex items-center gap-1"> <b>&#8377;30 Cr</b>
+                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span className='flex'><img src='Vector (1).png' /><img src='Green.png' /></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="grid flex-row gap-2 mb-2 2xl:grid-cols-8 xl:grid-cols-8 lg:grid-cols-8 md:grid-cols-8 sm:grid-cols-1">
+                    <div className="col-span-3">
+                        <div className="bg-[#F9FAFB] rounded-md h-36 w-42 p-2">
+                            <p className="text-[16px] font-semibold text-[#344054] text-center">Target vs. Actual</p>
+                            <div>
+                                <ReactECharts style={{ height: "100px", width: "180px" }} option={Circle5}></ReactECharts>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-span-3">
+                        <div className="bg-[#F9FAFB] rounded-md p-2 h-36 w-80" style={{width:'338px'}}>
+                            <p className="text-[13px] font-semibold text-[#344054]">Income Trend</p>
+
+                            <div>
+                                <ReactECharts style={{ height: "100px", width: "320px" }} option={line1}></ReactECharts>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <div className="bg-white py-3 rounded-xl border  border-[#E1E6E3] px-4">
+                <div className="flex justify-between mb-4">
+                    <span className="font-semibold">Income</span>
+                    <div className="card flex justify-content-center text-black">
+                        <Menu model={revenuelist} popup ref={menu} />
+                        <Button icon="pi pi-ellipsis-v" style={{width:10, height:10}} severity="secondary" onClick={(e) => menu.current.toggle(e)} text/>
+                    </div>
+                </div>
+                <div className="flex gap-2 mb-3 justify-evenly">
+                    <div className="p-3 w-2.4/12 border border-[#E1E6E3] rounded-[5px] grow"><p className="text-[12px] font-normal text-[#344054]">EBIT</p>
+                        <div className="flex items-center gap-1"> <b>&#8377;32.63 Cr</b>
+                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span className='flex'><img src='Vector (1).png' /><img src='Green.png' /></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="p-3 w-2.4/12 border border-[#E1E6E3] rounded-[5px] grow"><p className="text-[12px] font-normal text-[#344054]">EBIT%</p>
+                        <div className="flex items-center gap-1"> <b>4.1%</b>
+                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span className='flex'><img src='Vector.png' /><img src='Pink.png' /></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="p-3 w-2.4/12 border border-[#E1E6E3] rounded-[5px] grow"><p className="text-[12px] font-normal text-[#344054]">EBITDA</p>
+                        <div className="flex items-center gap-1"> <b>&#8377;30 Cr</b>
+                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span className='flex'><img src='Vector (1).png' /><img src='Green.png' /></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="p-3 w-2.4/12 border border-[#E1E6E3] rounded-[5px] grow"><p className="text-[12px] font-normal text-[#344054]">EBITDA</p>
+                        <div className="flex items-center gap-1"> <b>&#8377;30 Cr</b>
+                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span className='flex'><img src='Vector (1).png' /><img src='Green.png' /></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="p-3 w-2.4/12 border border-[#E1E6E3] rounded-[5px] grow"><p className="text-[12px] font-normal text-[#344054]">EBITDA</p>
+                        <div className="flex items-center gap-1"> <b>&#8377;30 Cr</b>
+                            <div class="arrowicon text-[#86909C] text-[14px] font-meduim "> <span className='flex'><img src='Vector (1).png' /><img src='Green.png' /></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div className="grid flex-row gap-2 mb-2 2xl:grid-cols-8 xl:grid-cols-8 lg:grid-cols-8 md:grid-cols-8 sm:grid-cols-1">
+                    <div className="col-span-3">
+                        <div className="bg-[#F9FAFB] rounded-md h-36 w-42 p-2">
+                            <p className="text-[16px] font-semibold text-[#344054] text-center">Target vs. Actual</p>
+                            <div>
+                                <ReactECharts style={{ height: "100px", width: "180px" }} option={Circle6}></ReactECharts>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-span-3">
+                        <div className="bg-[#F9FAFB] rounded-md p-2 h-36 w-80" style={{width:'338px'}}>
+                            <p className="text-[13px] font-semibold text-[#344054]">Income Trend</p>
+
+                            <div>
+                                <ReactECharts style={{ height: "120px", width: "320px" }} option={line2}></ReactECharts>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      </div>
+    </div>
+
+                    
+            
         </>
     )
 }
