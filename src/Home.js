@@ -550,7 +550,7 @@ export default function Home() {
                                                     <div className='grid grid-cols-2'>
                                                         <div className='gap-3 mr-2'>
                                                             <div className="grid w-full mb-5">
-                                                                <label className="text-sm font-medium">Fiancial Year</label>
+                                                                <label className="text-[12px] font-normal text-[#344054]">Fiancial Year</label>
                                                                 <Dropdown
                                                                     value={selectedYear}
                                                                     onChange={(e) => setSelectedYear(e.value)}
@@ -561,7 +561,7 @@ export default function Home() {
                                                                 />
                                                            </div>
                                                            <div className=" grid ">
-                                                                <label className="text-sm font-medium">SUB</label>
+                                                                <label className="text-[12px] font-normal text-[#344054]">SUB</label>
                                                                 <Dropdown
                                                                     value={selectedSUB}
                                                                     onChange={(e) => setSelectedSUB(e.value)}
@@ -574,7 +574,7 @@ export default function Home() {
                                                         </div>
                                                         <div className='gap-3 ml-2'>
                                                             <div className=" grid ">
-                                                                <label className="text-sm font-medium">Owner</label>
+                                                                <label className="text-[12px] font-normal text-[#344054]">Owner</label>
                                                                 <Dropdown
                                                                     value={selectedOwner}
                                                                     onChange={(e) => setSelectedOwner(e.value)}
@@ -585,7 +585,7 @@ export default function Home() {
                                                                 />
                                                             </div>
                                                            <div className=" grid mt-5 mb-5">
-                                                                <label className="text-sm font-medium">Vendor</label>
+                                                                <label className="text-[12px] font-normal text-[#344054]">Vendor</label>
                                                                 <Dropdown
                                                                     value={selectedVendor}
                                                                     onChange={(e) => setSelectedVendor(e.value)}
@@ -598,7 +598,7 @@ export default function Home() {
                                                         </div>
                                                     </div>
                                                     <div className=" grid">
-                                                        <label className="text-sm font-medium">Profit Center</label>
+                                                        <label className="text-[12px] font-normal text-[#344054]">Profit Center</label>
                                                         <Dropdown
                                                             value={selectedProfit}
                                                             onChange={(e) => setSelectedProfit(e.value)}
@@ -618,7 +618,7 @@ export default function Home() {
                                     <div className="flex ">
                                         <div className="">
                                             <div>
-                                                <label className="text-sm font-light">Fiancial Year</label>
+                                                <label className="text-[12px] font-normal text-[#344054]">Fiancial Year</label>
                                             </div>
                                             <Dropdown
                                                 value={selectedYear}
@@ -631,7 +631,7 @@ export default function Home() {
                                         </div>
                                         <div className='ml-2'>
                                             <div className='block '>
-                                                <label className="text-sm font-light">SUB   </label>
+                                                <label className="text-[12px] font-normal text-[#344054]">SUB   </label>
                                             </div >
                                             <Dropdown
                                                 value={selectedSUB}
@@ -665,7 +665,7 @@ export default function Home() {
                                                 </div>
                                                 </div>
                                                 <div className=" gap-4">
-                                                    <span >Finantial year</span>
+                                                    <span >Fiancial Year</span>
                                                     <span className="p-float-label">
                                                         <Dropdown
                                                             inputId="dd-city"

@@ -160,7 +160,7 @@ function Content() {
             <div className='flex'>
                
                     <div className='ml-6 w-36'>
-                        <div className='text-sm'>Go Back</div>
+                        <div className='text-sm'><Link to='/'>Go Back</Link> </div>
                         <div className='font-semibold text-2xl'>Revenue</div>
                     </div>
                      <div className='grid grid-cols-2 justify-between ml-28'>
