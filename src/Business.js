@@ -176,10 +176,10 @@ export default function Business() {
 
 
                 <div className='col-span-2 '>
-                    <div className='bg-white py-3 max-h-full shadow-xl rounded-xl border border-[#E1E6E3]  '>
-                        <div> <p className=' text-green-600 bg-slate-100 text-lg flex '><img style={{ width: "40px", height: "40px" }} src='mony.png' /><div className='pl-2 pt-1'>Key Insight</div> </p></div>
-                        <div className='list mb-5 w-80 pl-7 '>
-                            <ul className="mt-4  justify-normal list-image-[url(yes.png)] ... ">
+                    <div className='bg-white  py-3 max-h-full shadow-xl rounded-xl border border-[#E1E6E3]  '>
+                        <div> <p className=' text-green-600 bg-slate-100 text-lg flex '><img style={{ width: "40px", height: "40px" }} src='../Insight.png' /><div className='pl-2 pt-1'>Key Insight</div> </p></div>
+                        <div className='list mb-5 w-80 pl-8 '>
+                            <ul className="mt-4  justify-normal list-image-[url(../yes.png)] ... ">
 
                                 <li className='leading p-2'>Gross Margin has decreased more than 20% from Q3 to Q4 for current year.However it has increased compared to last year by 5%. </li>
                                 <hr></hr>

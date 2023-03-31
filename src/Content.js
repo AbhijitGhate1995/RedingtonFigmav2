@@ -169,19 +169,19 @@ function Content() {
 
                             <ul class="flex flex-col p-4 mt-4 rounded-lg  md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700 ">
                                 <li>
-                                    <Link to='/header/matrics'  className={"text-red-600" + (url === "/header/matrics" ?" active" : "text-black")}  >Metrics</Link>
+                                    <Link to='/header/matrics'  className={"text-green-600" + (url === "/header/matrics" ?" active" : "text-black")}  >Metrics</Link>
                                 </li>
                                 <li>
-                                    <Link to='/header/business' className={"text-red-600" + (url === "/header/business" ?" active" : "text-black")}  >Buisness</Link>
+                                    <Link to='/header/business' className={"text-green-600" + (url === "/header/business" ?" active" : "text-black")}  >Buisness</Link>
                                 </li>
                                 <li>
-                                    <Link to='/header/comparison' className={"text-red-600" + (url === "/header/comparison" ?" active" : "text-black")} >Comparison</Link>
+                                    <Link to='/header/comparison' className={"text-green-600" + (url === "/header/comparison" ?" active" : "text-black")} >Comparison</Link>
                                 </li>
                                 <li>
-                                    <Link to='/header/detailed' className={"text-red-600" + (url === "/header/detailed" ?" active" : "text-black")} >Detailed</Link>
+                                    <Link to='/header/detailed' className={"text-green-600" + (url === "/header/detailed" ?" active" : "text-black")} >Detailed</Link>
                                 </li>
                                 <li>
-                                    <Link to='/header/projections' className={"text-red-600" + (url === "/header/projections" ?" active" : "text-black")} >Projections</Link>
+                                    <Link to='/header/projections' className={"text-green-600" + (url === "/header/projections" ?" active" : "text-black")} >Projections</Link>
                                 </li>
                             </ul>
 

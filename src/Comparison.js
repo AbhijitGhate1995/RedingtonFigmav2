@@ -201,7 +201,7 @@ export default function Comparison() {
                                 <div>
                                     <div className='grid grid-cols-4'>
                                         <div>
-                                            <div className=' pt-3 w-52'><h1 className='text-center font-semibold'>Target Achivement</h1> <img src='rupies.png'></img></div>
+                                            <div className=' pt-3 w-52'><h1 className='text-center font-semibold'>Target Achivement</h1> <img src='../money.png'></img></div>
 
                                         </div>
 
@@ -215,7 +215,7 @@ export default function Comparison() {
                             <div className='bg-white mt-4 rounded-xl shadow-xl  border-[#91a498] px-4 '>
                                 <div className='grid grid-cols-4'>
                                     <div>
-                                        <div className=' pt-3 w-52'><h1 className='text-center font-semibold'>Target Achivement</h1> <img src='rupies.png'></img></div>
+                                        <div className=' pt-3 w-52'><h1 className='text-center font-semibold'>Target Achivement</h1> <img src='../money.png'></img></div>
 
                                     </div>
 
