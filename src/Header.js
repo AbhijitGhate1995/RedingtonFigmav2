@@ -514,9 +514,8 @@ function Header() {
                         </div>
                        
                     </header>
-                    <Outlet>
-                        
-                    </Outlet>
+                  
+                   <Outlet></Outlet>
                 </main>
             </div>
         </div>

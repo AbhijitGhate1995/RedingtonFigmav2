@@ -95,7 +95,7 @@ export default function Business() {
                     <div className='bg-[#262D29] text-white py-3 max-h-full w-auto rounded-xl border  border-[#E1E6E3] px-4 '>
                         <p className=' text-green-600 p-3 font-semibold'>Buisness Insight</p>
                         <ul>
-                            <li className='leading-10  tracking-wide text-base bg-[#029046] rounded-md'>1.Sed do eiusmod temporolore magna.</li>
+                            <li className='leading-10  tracking-wide text-base bg-[#029046] rounded-md'>1.Sed do eiusmod temporolore.</li>
                             <li className='leading-10   tracking-wide text-base'>2.Sed do eiusmod tempor e magna aliqua.</li>
                             <li className='leading-10  tracking-wide text-base'>3.Ut enim ad minim veniam, llamco laboris nisi </li>
                             <li className='leading-10   tracking-wide text-base'>4.Commodo consequat. Duis aut in voluptate </li>
@@ -177,13 +177,11 @@ export default function Business() {
 
                 <div className='col-span-2 '>
                     <div className='bg-white py-3 max-h-full shadow-xl rounded-xl border border-[#E1E6E3] px-4 '>
-                        <div> <p className=' text-green-600 bg-slate-100 text-lg flex '><img style={{ width: "40px", height: "40px" }} src='Insight.png' /><div className='pl-2 pt-1'>Key Insight</div> </p></div>
+                        <div> <p className=' text-green-600 bg-slate-100 text-lg flex '><img style={{ width: "40px", height: "40px" }} src='mony.png' /><div className='pl-2 pt-1'>Key Insight</div> </p></div>
                         <div className='list mb-5 w-80 pl-7 '>
-                            <ul className="mt-4  justify-normal list-image-[url(Check.png)] ... ">
+                            <ul className="mt-4  justify-normal list-image-[url(yes.png)] ... ">
 
-                                <li className='leading p-2'>So I started to walk into the water.
-                                    I won't lie to you boys, I was terrified.
-                                    But I pressed on, and as I made my way past the breakers </li>
+                                <li className='leading p-2'>Gross Margin has decreased more than 20% from Q3 to Q4 for current year.However it has increased compared to last year by 5%. </li>
                                 <hr></hr>
                                 <li className='leading  p-2'>So I started to walk into the water.
                                     I won't lie to you boys, I was terrified.
